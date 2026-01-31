@@ -461,7 +461,7 @@ export default function Phonetically() {
       <div className="content-wrapper max-w-4xl mx-auto w-full">
         <div className="text-center mb-12 mt-8">
           <img 
-            src="/mnt/user-data/uploads/Untitled_design__7_.png" 
+            src="https://cdn.discordapp.com/attachments/1467199260062650552/1467276175981412523/Untitled_design_7.png?ex=697fcaed&is=697e796d&hm=2ac0c2aeefffd18730bfa2abf6208e1a5b8017ac89b1821efeb136a76d0aac3d" 
             alt="Phonetically Logo" 
             className="logo-small mb-6 mx-auto"
             style={{display: 'block'}}
