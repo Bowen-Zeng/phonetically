@@ -34,7 +34,6 @@ export default function Phonetically() {
   const [showAffirmation, setShowAffirmation] = useState(false);
   const [aiGuideMessage, setAiGuideMessage] = useState('');
 
-  // Phonetics categories with specific sounds
   const phoneticCategories = [
     {
       id: 1,
@@ -106,25 +105,10 @@ export default function Phonetically() {
     "That was perfect! ⭐"
   ];
 
-  // Simulated lessons data (would come from MongoDB)
-  const lessons = phoneticCategories;
-
-  // ElevenLabs AI Voice simulation with guide
-//  const speakWord = async (word: string) => {
-    //setIsPlaying(true);
-    //setAiGuideMessage(`Listen carefully to how I say "${word}"`);
+  const speakWord = async (word: string) => {
+    setIsPlaying(true);
+    setAiGuideMessage(`Listen carefully to how I say "${word}"`);
     
-    // In production, this would call ElevenLabs API:
-    // const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID', {
-    //   method: 'POST',
-    //   headers: {
-    //     'xi-api-key': 'sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({ text: word })
-    // });
-    
-    // For demo, using Web Speech API
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.rate = 0.7;
     utterance.pitch = 1.1;
@@ -139,7 +123,6 @@ export default function Phonetically() {
     setIsRecording(true);
     setAiGuideMessage("Listening... Say the word clearly!");
     
-    // In production, implement actual recording with Web Audio API
     setTimeout(() => {
       setIsRecording(false);
       const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
@@ -157,43 +140,38 @@ export default function Phonetically() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
       alert('Please enter a valid email address with @');
       return;
     }
-    // Accept any credentials since there's no database
     setIsLoggedIn(true);
     setCurrentPage('home');
   };
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
       alert('Please enter a valid email address with @');
       return;
     }
-    // Accept any credentials since there's no database
     setIsLoggedIn(true);
     setCurrentPage('home');
   };
 
   const LandingPage = () => (
-    <div className="flex-1 flex flex-col">
-      {/* Navigation Bar */}
+    <div className="flex-1 flex flex-col overflow-hidden">
       <nav className="landing-nav">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2 sm:gap-3">
             <img 
               src="/mnt/user-data/uploads/Untitled_design__7_.png" 
               alt="Phonetically Logo" 
               className="nav-logo"
             />
-            <span className="text-2xl font-bold text-white">PHONETICALLY</span>
+            <span className="text-xl sm:text-2xl font-bold text-white">PHONETICALLY</span>
           </div>
           
-          <div className="flex items-center gap-8">
+          <div className="hidden sm:flex items-center gap-4 lg:gap-8">
             <button className="nav-link">Features</button>
             <button className="nav-link">About</button>
             <button onClick={() => setCurrentPage('welcome')} className="nav-link">Sign in</button>
@@ -201,45 +179,46 @@ export default function Phonetically() {
               Get Started
             </button>
           </div>
+          
+          <button onClick={() => setCurrentPage('welcome')} className="sm:hidden get-started-btn">
+            Start
+          </button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="flex-1 flex flex-col items-center justify-center p-6 relative overflow-hidden">
-        {/* Large glowing orb background */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 relative overflow-hidden">
         <div className="hero-orb"></div>
         
-        <div className="content-wrapper text-center relative z-10">
-          <div className="beta-badge mb-6">
+        <div className="content-wrapper text-center relative z-10 max-w-5xl mx-auto">
+          <div className="beta-badge mb-4 sm:mb-6">
             ✨ Early Access Beta
           </div>
           
-          <h1 className="hero-title mb-6">
+          <h1 className="hero-title mb-4 sm:mb-6">
             Build Faster <span className="hero-gradient">With</span><br/>
             <span className="hero-gradient">Lumine Insights</span>
           </h1>
           
-          <p className="hero-subtitle mb-12">
-            A minimal AI-powered system that transforms complex workflows<br/>
-            into clear, glowing, effortless structures — helping you ship ideas<br/>
+          <p className="hero-subtitle mb-8 sm:mb-12 px-4">
+            A minimal AI-powered system that transforms complex workflows<br className="hidden sm:block"/>
+            into clear, glowing, effortless structures — helping you ship ideas<br className="hidden sm:block"/>
             faster.
           </p>
           
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
             <button 
               onClick={() => setCurrentPage('welcome')}
-              className="hero-primary-btn"
+              className="hero-primary-btn w-full sm:w-auto"
             >
               Get Started
             </button>
-            <button className="hero-secondary-btn">
+            <button className="hero-secondary-btn w-full sm:w-auto">
               Watch Demo
             </button>
           </div>
         </div>
 
-        {/* Bottom preview mockup */}
-        <div className="preview-mockup">
+        <div className="preview-mockup hidden lg:block">
           <div className="mockup-container">
             <div className="mockup-header">
               <div className="flex items-center gap-3 mb-4">
@@ -271,31 +250,31 @@ export default function Phonetically() {
   );
 
   const WelcomePage = () => (
-    <div className="flex-1 flex flex-col items-center justify-center p-6">
-      <div className="content-wrapper">
+    <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6">
+      <div className="content-wrapper w-full max-w-md">
         <img 
           src="/mnt/user-data/uploads/Untitled_design__7_.png" 
           alt="Phonetically Logo" 
-          className="logo mb-8"
+          className="logo mb-6 sm:mb-8"
           style={{display: 'block', margin: '0 auto'}}
         />
         
-        <h1 className="text-5xl font-bold text-white mb-4 text-center">Phonetically</h1>
-        <p className="text-white/70 text-center max-w-lg mb-12 text-lg">
+        <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3 sm:mb-4 text-center">Phonetically</h1>
+        <p className="text-white/70 text-center max-w-lg mb-8 sm:mb-12 text-base sm:text-lg px-4">
           AI-powered speech therapy for children with hearing challenges and adults managing speech difficulties
         </p>
         
-        <div className="flex flex-col gap-4 w-full max-w-sm mx-auto">
+        <div className="flex flex-col gap-4 w-full px-4">
           <button 
             onClick={() => setCurrentPage('login')}
-            className="glass-button p-4 text-lg font-semibold"
+            className="glass-button p-3 sm:p-4 text-base sm:text-lg font-semibold"
           >
             Log In
           </button>
           
           <button 
             onClick={() => setCurrentPage('signup')}
-            className="glass-button-secondary p-4 text-lg font-semibold"
+            className="glass-button-secondary p-3 sm:p-4 text-base sm:text-lg font-semibold"
           >
             Sign Up
           </button>
@@ -305,11 +284,11 @@ export default function Phonetically() {
   );
 
   const LoginPage = () => (
-    <div className="flex-1 flex flex-col items-center justify-center p-6">
+    <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto">
       <div className="content-wrapper w-full max-w-md">
         <button 
           onClick={() => setCurrentPage('landing')}
-          className="text-white/60 mb-6 hover:text-white transition-colors flex items-center gap-2"
+          className="text-white/60 mb-4 sm:mb-6 hover:text-white transition-colors flex items-center gap-2"
         >
           ← Back
         </button>
@@ -317,14 +296,14 @@ export default function Phonetically() {
         <img 
           src="/mnt/user-data/uploads/Untitled_design__7_.png" 
           alt="Phonetically Logo" 
-          className="logo-small mb-6 mx-auto"
+          className="logo-small mb-4 sm:mb-6 mx-auto"
           style={{display: 'block'}}
         />
         
-        <h2 className="text-3xl font-bold text-white mb-2 text-center">Welcome Back</h2>
-        <p className="text-white/60 text-center mb-8">Log in to continue your progress</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center">Welcome Back</h2>
+        <p className="text-white/60 text-center mb-6 sm:mb-8 text-sm sm:text-base">Log in to continue your progress</p>
         
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-4 px-4 sm:px-0">
           <div>
             <label className="text-white/70 text-sm block mb-2">Email</label>
             <div className="input-wrapper">
@@ -362,12 +341,12 @@ export default function Phonetically() {
             </div>
           </div>
           
-          <button type="submit" className="glass-button w-full p-4 text-lg font-semibold mt-6">
+          <button type="submit" className="glass-button w-full p-3 sm:p-4 text-base sm:text-lg font-semibold mt-6">
             Log In
           </button>
         </form>
         
-        <p className="text-center text-white/60 mt-6">
+        <p className="text-center text-white/60 mt-4 sm:mt-6 text-sm sm:text-base">
           Don't have an account?{' '}
           <button 
             onClick={() => setCurrentPage('signup')}
@@ -381,26 +360,26 @@ export default function Phonetically() {
   );
 
   const SignupPage = () => (
-    <div className="flex-1 flex flex-col items-center justify-center p-6">
+    <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto">
       <div className="content-wrapper w-full max-w-md">
         <button 
           onClick={() => setCurrentPage('landing')}
-          className="text-white/60 mb-6 hover:text-white transition-colors flex items-center gap-2"
+          className="text-white/60 mb-4 sm:mb-6 hover:text-white transition-colors flex items-center gap-2"
         >
           ← Back
         </button>
         
         <img 
-          src="src\phenotically logos.png" 
+          src="/mnt/user-data/uploads/Untitled_design__7_.png" 
           alt="Phonetically Logo" 
-          className="logo-small mb-6 mx-auto"
+          className="logo-small mb-4 sm:mb-6 mx-auto"
           style={{display: 'block'}}
         />
         
-        <h2 className="text-3xl font-bold text-white mb-2 text-center">Create Account</h2>
-        <p className="text-white/60 text-center mb-8">Start your speech therapy journey</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center">Create Account</h2>
+        <p className="text-white/60 text-center mb-6 sm:mb-8 text-sm sm:text-base">Start your speech therapy journey</p>
         
-        <form onSubmit={handleSignup} className="space-y-4">
+        <form onSubmit={handleSignup} className="space-y-4 px-4 sm:px-0">
           <div>
             <label className="text-white/70 text-sm block mb-2">Full Name</label>
             <div className="input-wrapper">
@@ -453,12 +432,12 @@ export default function Phonetically() {
             </div>
           </div>
           
-          <button type="submit" className="glass-button w-full p-4 text-lg font-semibold mt-6">
+          <button type="submit" className="glass-button w-full p-3 sm:p-4 text-base sm:text-lg font-semibold mt-6">
             Sign Up
           </button>
         </form>
         
-        <p className="text-center text-white/60 mt-6">
+        <p className="text-center text-white/60 mt-4 sm:mt-6 text-sm sm:text-base">
           Already have an account?{' '}
           <button 
             onClick={() => setCurrentPage('login')}
@@ -472,159 +451,61 @@ export default function Phonetically() {
   );
 
   const HomePage = () => (
-    <div className="flex-1 flex flex-col p-6 overflow-y-auto">
+    <div className="flex-1 flex flex-col p-4 sm:p-6 overflow-y-auto pb-20">
       <div className="content-wrapper max-w-4xl mx-auto w-full">
-        <div className="text-center mb-12 mt-8">
+        <div className="text-center mb-8 sm:mb-12 mt-4 sm:mt-8">
           <img 
-            src="https://cdn.discordapp.com/attachments/1467199260062650552/1467276175981412523/Untitled_design_7.png?ex=697fcaed&is=697e796d&hm=2ac0c2aeefffd18730bfa2abf6208e1a5b8017ac89b1821efeb136a76d0aac3d" 
+            src="/mnt/user-data/uploads/Untitled_design__7_.png" 
             alt="Phonetically Logo" 
-            className="logo-small mb-6 mx-auto"
+            className="logo-small mb-4 sm:mb-6 mx-auto"
             style={{display: 'block'}}
           />
-          <h1 className="text-4xl font-bold text-white mb-4">Welcome to Phonetically</h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <h1 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 px-4">Welcome to Phonetically</h1>
+          <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Empowering children with hearing challenges through AI-powered speech therapy
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Personalized Learning</h3>
-            <p className="text-white/70">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">
+          <div className="glass-panel p-6 sm:p-8">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎯</div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Personalized Learning</h3>
+            <p className="text-white/70 text-sm sm:text-base">
               AI-driven lessons tailored to each child's unique speech development needs and progress level
             </p>
           </div>
 
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🎤</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Real-Time Feedback</h3>
-            <p className="text-white/70">
+          <div className="glass-panel p-6 sm:p-8">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎤</div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Real-Time Feedback</h3>
+            <p className="text-white/70 text-sm sm:text-base">
               Advanced voice recognition provides instant feedback on pronunciation and articulation
             </p>
           </div>
 
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🔊</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Natural AI Voice</h3>
-            <p className="text-white/70">
+          <div className="glass-panel p-6 sm:p-8">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🔊</div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Natural AI Voice</h3>
+            <p className="text-white/70 text-sm sm:text-base">
               Crystal-clear audio demonstrations using ElevenLabs technology for perfect modeling
             </p>
           </div>
 
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">📊</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Track Growth</h3>
-            <p className="text-white/70">
+          <div className="glass-panel p-6 sm:p-8">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">📊</div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Track Growth</h3>
+            <p className="text-white/70 text-sm sm:text-base">
               Monitor improvement over time with detailed analytics and milestone celebrations
             </p>
           </div>
         </div>
 
-        <div className="text-center">
+        <div className="text-center pb-4">
           <button 
             onClick={() => setCurrentPage('lessons')}
-            className="glass-button p-6 px-12 text-xl font-semibold inline-flex items-center gap-3"
+            className="glass-button p-4 sm:p-6 px-8 sm:px-12 text-lg sm:text-xl font-semibold inline-flex items-center gap-2 sm:gap-3"
           >
-            Start Learning <ArrowRight size={24} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-
-  const SpeechDifficultiesPage = () => (
-    <div className="flex-1 flex flex-col p-6 overflow-y-auto">
-      <div className="content-wrapper max-w-4xl mx-auto w-full">
-        <div className="text-center mb-12 mt-8">
-          <span className="section-badge">For Adults & Teens</span>
-          <h1 className="text-4xl font-bold text-white mb-4 mt-4">Speech Difficulties Support</h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Personalized speech therapy for individuals managing aphasia, stuttering, articulation challenges, and voice disorders
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🗣️</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Aphasia Recovery</h3>
-            <p className="text-white/70 mb-4">
-              Targeted exercises for language recovery after stroke or brain injury, focusing on word retrieval, sentence formation, and communication confidence
-            </p>
-            <ul className="space-y-2 text-white/60 text-sm">
-              <li>• Word-finding practice</li>
-              <li>• Conversational scenarios</li>
-              <li>• Progressive difficulty levels</li>
-            </ul>
-          </div>
-
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">⏸️</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Fluency Training</h3>
-            <p className="text-white/70 mb-4">
-              Evidence-based techniques for managing stuttering and cluttering, with real-time feedback and breathing exercises
-            </p>
-            <ul className="space-y-2 text-white/60 text-sm">
-              <li>• Controlled breathing patterns</li>
-              <li>• Speech rate monitoring</li>
-              <li>• Anxiety management tools</li>
-            </ul>
-          </div>
-
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Articulation Therapy</h3>
-            <p className="text-white/70 mb-4">
-              Clear pronunciation practice for specific sounds and phonemes, with visual feedback and phonetic guidance
-            </p>
-            <ul className="space-y-2 text-white/60 text-sm">
-              <li>• Sound-specific exercises</li>
-              <li>• Minimal pair practice</li>
-              <li>• Contextual speech training</li>
-            </ul>
-          </div>
-
-          <div className="glass-panel p-8">
-            <div className="text-4xl mb-4">🎵</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Voice Disorders</h3>
-            <p className="text-white/70 mb-4">
-              Vocal rehabilitation for hoarseness, strain, or voice fatigue with pitch and volume control exercises
-            </p>
-            <ul className="space-y-2 text-white/60 text-sm">
-              <li>• Vocal hygiene education</li>
-              <li>• Resonance exercises</li>
-              <li>• Pitch range expansion</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="glass-panel p-8 mb-8">
-          <h3 className="text-2xl font-bold text-white mb-4">How It Works</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div>
-              <div className="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xl font-bold text-purple-400 mb-3">1</div>
-              <h4 className="text-lg font-semibold text-white mb-2">Assessment</h4>
-              <p className="text-white/60 text-sm">Complete an initial evaluation to identify your specific speech challenges and goals</p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xl font-bold text-purple-400 mb-3">2</div>
-              <h4 className="text-lg font-semibold text-white mb-2">Custom Plan</h4>
-              <p className="text-white/60 text-sm">Receive a personalized therapy program designed for your unique needs and progress level</p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xl font-bold text-purple-400 mb-3">3</div>
-              <h4 className="text-lg font-semibold text-white mb-2">Daily Practice</h4>
-              <p className="text-white/60 text-sm">Work through exercises at your own pace with AI guidance and instant feedback</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <button 
-            onClick={() => setCurrentPage('lessons')}
-            className="glass-button p-6 px-12 text-xl font-semibold inline-flex items-center gap-3"
-          >
-            Begin Your Journey <ArrowRight size={24} />
+            Start Learning <ArrowRight size={20} className="sm:w-6 sm:h-6" />
           </button>
         </div>
       </div>
@@ -632,20 +513,20 @@ export default function Phonetically() {
   );
 
   const LessonsPage = () => (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 p-4 sm:p-6 overflow-y-auto pb-20">
       <div className="content-wrapper max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-2">Phonetic Practice</h2>
-        <p className="text-white/60 mb-8">Choose a sound category to practice</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Phonetic Practice</h2>
+        <p className="text-white/60 mb-6 sm:mb-8 text-sm sm:text-base">Choose a sound category to practice</p>
         
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {phoneticCategories.map(category => (
-            <div key={category.id} className="glass-panel p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">{category.icon}</span>
-                <h3 className="text-2xl font-bold text-white">{category.category}</h3>
+            <div key={category.id} className="glass-panel p-4 sm:p-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span className="text-3xl sm:text-4xl">{category.icon}</span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">{category.category}</h3>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-3">
                 {category.sounds.map((sound, idx) => (
                   <button
                     key={idx}
@@ -655,10 +536,10 @@ export default function Phonetically() {
                       setWordsCompleted(0);
                       setAiGuideMessage("Let's practice together! Click Listen to hear each word.");
                     }}
-                    className="glass-button p-4 text-left hover:scale-[1.02] transition-transform"
+                    className="glass-button p-3 sm:p-4 text-left hover:scale-[1.02] transition-transform"
                   >
-                    <div className="font-semibold text-lg text-white mb-1">{sound.sound}</div>
-                    <div className="text-white/60 text-sm">{sound.example}</div>
+                    <div className="font-semibold text-base sm:text-lg text-white mb-1">{sound.sound}</div>
+                    <div className="text-white/60 text-xs sm:text-sm">{sound.example}</div>
                     <div className="text-purple-400 text-xs mt-2">{sound.words.length} words</div>
                   </button>
                 ))}
@@ -675,7 +556,7 @@ export default function Phonetically() {
     const progress = ((currentWordIndex) / lesson.words.length) * 100;
 
     return (
-      <div className="flex-1 flex flex-col p-6">
+      <div className="flex-1 flex flex-col p-4 sm:p-6 overflow-y-auto pb-20">
         <div className="content-wrapper max-w-4xl mx-auto w-full">
           <button 
             onClick={() => {
@@ -684,26 +565,24 @@ export default function Phonetically() {
               setWordsCompleted(0);
               setAiGuideMessage('');
             }}
-            className="text-white/60 mb-6 hover:text-white transition-colors flex items-center gap-2"
+            className="text-white/60 mb-4 sm:mb-6 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base"
           >
             ← Back to Lessons
           </button>
           
-          {/* Progress Section */}
-          <div className="glass-panel p-6 mb-6">
-            <div className="flex justify-between items-center mb-3">
+          <div className="glass-panel p-4 sm:p-6 mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-3">
               <div>
-                <h2 className="text-xl font-bold text-white">{lesson.category} - {lesson.sound}</h2>
-                <p className="text-white/60 text-sm">{lesson.example}</p>
+                <h2 className="text-lg sm:text-xl font-bold text-white">{lesson.category} - {lesson.sound}</h2>
+                <p className="text-white/60 text-xs sm:text-sm">{lesson.example}</p>
               </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-purple-400">{currentWordIndex}/{lesson.words.length}</div>
-                <div className="text-white/60 text-sm">words completed</div>
+              <div className="text-left sm:text-right">
+                <div className="text-xl sm:text-2xl font-bold text-purple-400">{currentWordIndex}/{lesson.words.length}</div>
+                <div className="text-white/60 text-xs sm:text-sm">words completed</div>
               </div>
             </div>
             
-            {/* Progress Bar */}
-            <div className="relative w-full h-3 bg-black/30 rounded-full overflow-hidden">
+            <div className="relative w-full h-2 sm:h-3 bg-black/30 rounded-full overflow-hidden">
               <div 
                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 rounded-full"
                 style={{ width: `${progress}%` }}
@@ -713,14 +592,13 @@ export default function Phonetically() {
             </div>
           </div>
 
-          {/* AI Guide Message */}
           {aiGuideMessage && (
-            <div className="glass-panel p-4 mb-6 border-purple-500/40">
-              <div className="flex items-start gap-3">
-                <div className="text-2xl">🤖</div>
+            <div className="glass-panel p-3 sm:p-4 mb-4 sm:mb-6 border-purple-500/40">
+              <div className="flex items-start gap-2 sm:gap-3">
+                <div className="text-xl sm:text-2xl">🤖</div>
                 <div>
-                  <div className="text-purple-400 text-sm font-semibold mb-1">AI Guide</div>
-                  <div className="text-white">{aiGuideMessage}</div>
+                  <div className="text-purple-400 text-xs sm:text-sm font-semibold mb-1">AI Guide</div>
+                  <div className="text-white text-sm sm:text-base">{aiGuideMessage}</div>
                 </div>
               </div>
             </div>
@@ -728,36 +606,34 @@ export default function Phonetically() {
 
           {currentWordIndex < lesson.words.length ? (
             <>
-              {/* Practice Area */}
-              <div className="glass-panel p-12 mb-8 text-center">
-                <div className="text-7xl font-bold text-white mb-6 tracking-tight">
+              <div className="glass-panel p-8 sm:p-12 mb-6 sm:mb-8 text-center">
+                <div className="text-5xl sm:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                   {currentWord}
                 </div>
                 
                 <button
                   onClick={() => speakWord(currentWord)}
                   disabled={isPlaying}
-                  className="glass-button px-10 py-5 inline-flex items-center gap-3 mb-8 disabled:opacity-50 text-lg font-semibold"
+                  className="glass-button px-8 sm:px-10 py-4 sm:py-5 inline-flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 disabled:opacity-50 text-base sm:text-lg font-semibold"
                 >
-                  <Volume2 size={28} />
+                  <Volume2 size={24} className="sm:w-7 sm:h-7" />
                   <span>{isPlaying ? 'Playing...' : 'Listen'}</span>
                 </button>
                 
-                <div className="mb-6">
+                <div className="mb-4 sm:mb-6">
                   <button
                     onClick={startRecording}
                     disabled={isRecording}
                     className={`record-button ${isRecording ? 'recording' : ''}`}
                   >
-                    <Mic size={36} />
+                    <Mic size={32} className="sm:w-9 sm:h-9" />
                   </button>
                 </div>
                 
-                <div className="text-white/70 text-lg">
+                <div className="text-white/70 text-base sm:text-lg">
                   {isRecording ? 'Recording your voice...' : 'Tap microphone to practice'}
                 </div>
 
-                {/* Affirmation Animation */}
                 {showAffirmation && (
                   <div className="affirmation-popup">
                     {aiGuideMessage}
@@ -765,13 +641,12 @@ export default function Phonetically() {
                 )}
               </div>
               
-              {/* Word List */}
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3">
                 {lesson.words.map((word: string, idx: number) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentWordIndex(idx)}
-                    className={`glass-button py-3 text-sm transition-all ${
+                    className={`glass-button py-2 sm:py-3 text-xs sm:text-sm transition-all ${
                       idx === currentWordIndex 
                         ? 'ring-2 ring-purple-500 bg-purple-500/20' 
                         : idx < currentWordIndex 
@@ -786,11 +661,10 @@ export default function Phonetically() {
               </div>
             </>
           ) : (
-            /* Completion Screen */
-            <div className="glass-panel p-12 text-center">
-              <div className="text-6xl mb-6">🎉</div>
-              <h3 className="text-4xl font-bold text-white mb-4">Lesson Complete!</h3>
-              <p className="text-white/70 text-xl mb-8">
+            <div className="glass-panel p-8 sm:p-12 text-center">
+              <div className="text-5xl sm:text-6xl mb-4 sm:mb-6">🎉</div>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Lesson Complete!</h3>
+              <p className="text-white/70 text-lg sm:text-xl mb-6 sm:mb-8">
                 You practiced {lesson.words.length} words in {lesson.sound}
               </p>
               <button
@@ -799,7 +673,7 @@ export default function Phonetically() {
                   setCurrentWordIndex(0);
                   setWordsCompleted(0);
                 }}
-                className="glass-button px-10 py-4 text-lg font-semibold"
+                className="glass-button px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold"
               >
                 Choose Another Lesson
               </button>
@@ -810,24 +684,28 @@ export default function Phonetically() {
     );
   };
 
-
-
   return (
     <div className="app-container">
       <style>{`
+        * {
+          box-sizing: border-box;
+        }
+
         .app-container {
           min-height: 100vh;
+          height: 100vh;
           background: linear-gradient(180deg, #0a0a0f 0%, #1a0b2e 50%, #2d1b4e 100%);
           display: flex;
           flex-direction: column;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           color: white;
           position: relative;
+          overflow: hidden;
         }
 
         .app-container::before {
           content: '';
-          position: absolute;
+          position: fixed;
           top: 0;
           left: 0;
           right: 0;
@@ -839,28 +717,48 @@ export default function Phonetically() {
         }
         
         .logo {
-          width: 140px;
-          height: 140px;
+          width: 100px;
+          height: 100px;
           object-fit: contain;
           filter: drop-shadow(0 10px 40px rgba(138, 43, 226, 0.5));
         }
 
+        @media (min-width: 640px) {
+          .logo {
+            width: 140px;
+            height: 140px;
+          }
+        }
+
         .logo-small {
-          width: 80px;
-          height: 80px;
+          width: 60px;
+          height: 60px;
           object-fit: contain;
           filter: drop-shadow(0 5px 25px rgba(138, 43, 226, 0.4));
+        }
+
+        @media (min-width: 640px) {
+          .logo-small {
+            width: 80px;
+            height: 80px;
+          }
         }
         
         .glass-button {
           background: rgba(138, 43, 226, 0.15);
           backdrop-filter: blur(20px);
           border: 1px solid rgba(147, 51, 234, 0.4);
-          border-radius: 16px;
+          border-radius: 12px;
           color: white;
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
+        }
+
+        @media (min-width: 640px) {
+          .glass-button {
+            border-radius: 16px;
+          }
         }
         
         .glass-button:hover {
@@ -878,10 +776,16 @@ export default function Phonetically() {
           background: rgba(20, 20, 30, 0.6);
           backdrop-filter: blur(20px);
           border: 2px solid rgba(147, 51, 234, 0.3);
-          border-radius: 16px;
+          border-radius: 12px;
           color: white;
           cursor: pointer;
           transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+          .glass-button-secondary {
+            border-radius: 16px;
+          }
         }
 
         .glass-button-secondary:hover {
@@ -900,14 +804,20 @@ export default function Phonetically() {
           background: rgba(20, 20, 35, 0.5);
           backdrop-filter: blur(20px);
           border: 1px solid rgba(147, 51, 234, 0.2);
-          border-radius: 24px;
+          border-radius: 16px;
           transition: all 0.3s ease;
           box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
         }
 
+        @media (min-width: 640px) {
+          .glass-panel {
+            border-radius: 24px;
+          }
+        }
+
         .glass-panel:hover {
           background: rgba(30, 30, 45, 0.6);
-          transform: translateY(-4px);
+          transform: translateY(-2px);
           box-shadow: 0 8px 40px rgba(138, 43, 226, 0.3);
           border-color: rgba(147, 51, 234, 0.4);
         }
@@ -919,14 +829,21 @@ export default function Phonetically() {
 
         .glass-input {
           width: 100%;
-          padding: 14px 16px 14px 48px;
+          padding: 12px 14px 12px 44px;
           background: rgba(20, 20, 35, 0.6);
           backdrop-filter: blur(20px);
           border: 1px solid rgba(147, 51, 234, 0.3);
           border-radius: 12px;
           color: white;
-          font-size: 16px;
+          font-size: 14px;
           transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+          .glass-input {
+            padding: 14px 16px 14px 48px;
+            font-size: 16px;
+          }
         }
 
         .glass-input::placeholder {
@@ -942,16 +859,22 @@ export default function Phonetically() {
 
         .input-icon {
           position: absolute;
-          left: 16px;
+          left: 14px;
           top: 50%;
           transform: translateY(-50%);
           color: rgba(147, 51, 234, 0.7);
           pointer-events: none;
         }
 
+        @media (min-width: 640px) {
+          .input-icon {
+            left: 16px;
+          }
+        }
+
         .input-icon-right {
           position: absolute;
-          right: 16px;
+          right: 14px;
           top: 50%;
           transform: translateY(-50%);
           color: rgba(147, 51, 234, 0.7);
@@ -962,13 +885,19 @@ export default function Phonetically() {
           transition: color 0.3s ease;
         }
 
+        @media (min-width: 640px) {
+          .input-icon-right {
+            right: 16px;
+          }
+        }
+
         .input-icon-right:hover {
           color: rgba(147, 51, 234, 1);
         }
         
         .record-button {
-          width: 80px;
-          height: 80px;
+          width: 70px;
+          height: 70px;
           border-radius: 50%;
           background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
           border: 3px solid rgba(147, 51, 234, 0.5);
@@ -979,6 +908,14 @@ export default function Phonetically() {
           transition: all 0.3s ease;
           color: white;
           box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+          margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+          .record-button {
+            width: 80px;
+            height: 80px;
+          }
         }
         
         .record-button:hover {
@@ -1004,26 +941,42 @@ export default function Phonetically() {
         }
         
         .nav-bar {
-          background: rgba(10, 10, 20, 0.8);
+          background: rgba(10, 10, 20, 0.95);
           backdrop-filter: blur(30px);
           border-top: 1px solid rgba(147, 51, 234, 0.2);
-          padding: 12px 0;
-          position: relative;
-          z-index: 10;
+          padding: 8px 0;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 100;
+        }
+
+        @media (min-width: 640px) {
+          .nav-bar {
+            padding: 12px 0;
+          }
         }
         
         .nav-button {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 4px;
-          padding: 8px 16px;
+          gap: 2px;
+          padding: 6px 12px;
           color: rgba(255, 255, 255, 0.5);
           cursor: pointer;
           transition: all 0.3s ease;
           background: none;
           border: none;
           position: relative;
+        }
+
+        @media (min-width: 640px) {
+          .nav-button {
+            gap: 4px;
+            padding: 8px 16px;
+          }
         }
         
         .nav-button.active {
@@ -1033,14 +986,21 @@ export default function Phonetically() {
         .nav-button.active::before {
           content: '';
           position: absolute;
-          top: -12px;
+          top: -8px;
           left: 50%;
           transform: translateX(-50%);
-          width: 32px;
+          width: 28px;
           height: 3px;
           background: linear-gradient(90deg, #9333ea, #a855f7);
           border-radius: 2px;
           box-shadow: 0 0 10px rgba(147, 51, 234, 0.6);
+        }
+
+        @media (min-width: 640px) {
+          .nav-button.active::before {
+            top: -12px;
+            width: 32px;
+          }
         }
         
         .nav-button:hover {
@@ -1049,14 +1009,23 @@ export default function Phonetically() {
 
         .section-badge {
           display: inline-block;
-          padding: 6px 16px;
+          padding: 4px 12px;
           background: rgba(147, 51, 234, 0.2);
           border: 1px solid rgba(147, 51, 234, 0.4);
-          border-radius: 20px;
-          font-size: 14px;
+          border-radius: 16px;
+          font-size: 12px;
           font-weight: 600;
           color: #a855f7;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
+        }
+
+        @media (min-width: 640px) {
+          .section-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 16px;
+          }
         }
 
         .content-wrapper {
@@ -1064,9 +1033,8 @@ export default function Phonetically() {
           z-index: 1;
         }
 
-        /* Landing Page Styles */
         .landing-nav {
-          background: rgba(10, 10, 20, 0.6);
+          background: rgba(10, 10, 20, 0.8);
           backdrop-filter: blur(30px);
           border-bottom: 1px solid rgba(147, 51, 234, 0.1);
           position: relative;
@@ -1074,10 +1042,17 @@ export default function Phonetically() {
         }
 
         .nav-logo {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
           object-fit: contain;
           filter: drop-shadow(0 2px 10px rgba(138, 43, 226, 0.4));
+        }
+
+        @media (min-width: 640px) {
+          .nav-logo {
+            width: 32px;
+            height: 32px;
+          }
         }
 
         .nav-link {
@@ -1085,9 +1060,16 @@ export default function Phonetically() {
           background: none;
           border: none;
           cursor: pointer;
-          font-size: 15px;
+          font-size: 14px;
           transition: color 0.3s ease;
-          padding: 8px 12px;
+          padding: 6px 10px;
+        }
+
+        @media (min-width: 640px) {
+          .nav-link {
+            font-size: 15px;
+            padding: 8px 12px;
+          }
         }
 
         .nav-link:hover {
@@ -1098,11 +1080,19 @@ export default function Phonetically() {
           background: rgba(168, 85, 247, 0.2);
           border: 1px solid rgba(168, 85, 247, 0.4);
           color: white;
-          padding: 10px 24px;
+          padding: 8px 16px;
           border-radius: 8px;
           cursor: pointer;
           font-weight: 600;
+          font-size: 13px;
           transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+          .get-started-btn {
+            padding: 10px 24px;
+            font-size: 14px;
+          }
         }
 
         .get-started-btn:hover {
@@ -1113,16 +1103,25 @@ export default function Phonetically() {
 
         .hero-orb {
           position: absolute;
-          top: -200px;
+          top: -100px;
           left: 50%;
           transform: translateX(-50%);
-          width: 800px;
-          height: 800px;
+          width: 500px;
+          height: 500px;
           border-radius: 50%;
           background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(138, 43, 226, 0.1) 40%, transparent 70%);
-          filter: blur(60px);
+          filter: blur(40px);
           pointer-events: none;
           animation: orbPulse 8s ease-in-out infinite;
+        }
+
+        @media (min-width: 1024px) {
+          .hero-orb {
+            top: -200px;
+            width: 800px;
+            height: 800px;
+            filter: blur(60px);
+          }
         }
 
         @keyframes orbPulse {
@@ -1132,21 +1131,41 @@ export default function Phonetically() {
 
         .beta-badge {
           display: inline-block;
-          padding: 8px 20px;
+          padding: 6px 16px;
           background: rgba(147, 51, 234, 0.15);
           border: 1px solid rgba(147, 51, 234, 0.3);
-          border-radius: 24px;
+          border-radius: 20px;
           color: rgba(168, 85, 247, 0.9);
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 600;
         }
 
+        @media (min-width: 640px) {
+          .beta-badge {
+            padding: 8px 20px;
+            border-radius: 24px;
+            font-size: 14px;
+          }
+        }
+
         .hero-title {
-          font-size: 72px;
+          font-size: 36px;
           font-weight: 800;
           line-height: 1.1;
           color: white;
           letter-spacing: -0.02em;
+        }
+
+        @media (min-width: 640px) {
+          .hero-title {
+            font-size: 56px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .hero-title {
+            font-size: 72px;
+          }
         }
 
         .hero-gradient {
@@ -1157,24 +1176,46 @@ export default function Phonetically() {
         }
 
         .hero-subtitle {
-          font-size: 18px;
-          line-height: 1.8;
+          font-size: 14px;
+          line-height: 1.6;
           color: rgba(255, 255, 255, 0.6);
-          max-width: 700px;
+          max-width: 100%;
           margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+          .hero-subtitle {
+            font-size: 16px;
+            line-height: 1.7;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+          }
         }
 
         .hero-primary-btn {
           background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
           border: none;
           color: white;
-          padding: 16px 40px;
+          padding: 14px 32px;
           border-radius: 12px;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        @media (min-width: 640px) {
+          .hero-primary-btn {
+            padding: 16px 40px;
+            font-size: 16px;
+          }
         }
 
         .hero-primary-btn:hover {
@@ -1186,13 +1227,20 @@ export default function Phonetically() {
           background: rgba(20, 20, 35, 0.6);
           border: 1px solid rgba(147, 51, 234, 0.3);
           color: white;
-          padding: 16px 40px;
+          padding: 14px 32px;
           border-radius: 12px;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
           backdrop-filter: blur(20px);
+        }
+
+        @media (min-width: 640px) {
+          .hero-secondary-btn {
+            padding: 16px 40px;
+            font-size: 16px;
+          }
         }
 
         .hero-secondary-btn:hover {
@@ -1259,35 +1307,31 @@ export default function Phonetically() {
           font-size: 13px;
         }
 
-        @media (max-width: 768px) {
-          .hero-title {
-            font-size: 48px;
-          }
-          
-          .hero-subtitle {
-            font-size: 16px;
-          }
-
-          .preview-mockup {
-            bottom: -50px;
-          }
-        }
-
-        /* Affirmation Popup */
         .affirmation-popup {
           position: fixed;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%) scale(0.8);
           background: linear-gradient(135deg, #9333ea 0%, #a855f7 100%);
-          padding: 32px 48px;
-          border-radius: 24px;
-          font-size: 32px;
+          padding: 24px 36px;
+          border-radius: 20px;
+          font-size: 24px;
           font-weight: 700;
           color: white;
           box-shadow: 0 20px 60px rgba(147, 51, 234, 0.6);
           animation: affirmationAppear 0.5s ease-out forwards;
           z-index: 1000;
+          max-width: 90%;
+          text-align: center;
+        }
+
+        @media (min-width: 640px) {
+          .affirmation-popup {
+            padding: 32px 48px;
+            border-radius: 24px;
+            font-size: 32px;
+            max-width: auto;
+          }
         }
 
         @keyframes affirmationAppear {
@@ -1333,7 +1377,6 @@ export default function Phonetically() {
             <>
               {currentPage === 'home' && <HomePage />}
               {currentPage === 'lessons' && <LessonsPage />}
-              {currentPage === 'speech-difficulties' && <SpeechDifficultiesPage />}
             </>
           )}
           
@@ -1343,7 +1386,7 @@ export default function Phonetically() {
                 onClick={() => setCurrentPage('home')}
                 className={`nav-button ${currentPage === 'home' ? 'active' : ''}`}
               >
-                <Home size={24} />
+                <Home size={20} className="sm:w-6 sm:h-6" />
                 <span className="text-xs">Home</span>
               </button>
               
@@ -1351,7 +1394,7 @@ export default function Phonetically() {
                 onClick={() => setCurrentPage('lessons')}
                 className={`nav-button ${currentPage === 'lessons' ? 'active' : ''}`}
               >
-                <Book size={24} />
+                <Book size={20} className="sm:w-6 sm:h-6" />
                 <span className="text-xs">Lessons</span>
               </button>
               
@@ -1362,7 +1405,7 @@ export default function Phonetically() {
                 }}
                 className="nav-button"
               >
-                <User size={24} />
+                <User size={20} className="sm:w-6 sm:h-6" />
                 <span className="text-xs">Logout</span>
               </button>
             </div>
