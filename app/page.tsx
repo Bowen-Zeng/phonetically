@@ -2,12 +2,27 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Mic, Volume2, Book, User, Home, ArrowRight, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
+interface Sound {
+  sound: string;
+  example: string;
+  words: string[];
+}
+
+interface Category {
+  id: number;
+  category: string;
+  icon: string;
+  sounds: Sound[];
+}
+
+type Lesson = Sound & { category: string };
+
 export default function Phonetically() {
   const [currentPage, setCurrentPage] = useState('landing');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentLesson, setCurrentLesson] = useState(null);
+  const [currentLesson, setCurrentLesson] = useState<Lesson | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -95,15 +110,15 @@ export default function Phonetically() {
   const lessons = phoneticCategories;
 
   // ElevenLabs AI Voice simulation with guide
-  const speakWord = async (word) => {
-    setIsPlaying(true);
-    setAiGuideMessage(`Listen carefully to how I say "${word}"`);
+//  const speakWord = async (word: string) => {
+    //setIsPlaying(true);
+    //setAiGuideMessage(`Listen carefully to how I say "${word}"`);
     
     // In production, this would call ElevenLabs API:
     // const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID', {
     //   method: 'POST',
     //   headers: {
-    //     'xi-api-key': 'YOUR_API_KEY',
+    //     'xi-api-key': 'sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb',
     //     'Content-Type': 'application/json'
     //   },
     //   body: JSON.stringify({ text: word })
@@ -140,7 +155,7 @@ export default function Phonetically() {
     }, 2500);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
@@ -152,7 +167,7 @@ export default function Phonetically() {
     setCurrentPage('home');
   };
 
-  const handleSignup = (e) => {
+  const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
@@ -376,7 +391,7 @@ export default function Phonetically() {
         </button>
         
         <img 
-          src="/mnt/user-data/uploads/Untitled_design__7_.png" 
+          src="src\phenotically logos.png" 
           alt="Phonetically Logo" 
           className="logo-small mb-6 mx-auto"
           style={{display: 'block'}}
@@ -655,7 +670,7 @@ export default function Phonetically() {
     </div>
   );
 
-  const LessonInterface = ({ lesson }) => {
+  const LessonInterface = ({ lesson }: { lesson: Lesson }) => {
     const currentWord = lesson.words[currentWordIndex];
     const progress = ((currentWordIndex) / lesson.words.length) * 100;
 
@@ -752,7 +767,7 @@ export default function Phonetically() {
               
               {/* Word List */}
               <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-                {lesson.words.map((word, idx) => (
+                {lesson.words.map((word: string, idx: number) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentWordIndex(idx)}

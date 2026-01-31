@@ -1,0 +1,3 @@
+module.exports=[68137,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(30468);a.n(d("[project]/OneDrive/Documents/phonetically/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},3498,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(30468);a.n(d("[project]/OneDrive/Documents/phonetically/node_modules/next/dist/client/components/builtin/global-error.js"))},48218,a=>{"use strict";a.i(68137);var b=a.i(3498);a.n(b)}];
+
+//# sourceMappingURL=a4934_next_dist_client_components_builtin_global-error_da1e59f0.js.map
