@@ -1,18 +1,25 @@
+/**
+ * Phonetically - Speech and pronunciation practice app
+ * Main application component with login, speech practice, and phonetic lessons
+ */
 import React, { useState } from 'react';
 import { Mic, Volume2, Book, User, Home, ArrowRight, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
+// Form data structure for login/signup inputs
 interface FormData {
   email: string;
   password: string;
   name: string;
 }
 
+// Sound/phoneme structure for lesson content
 interface Sound {
   sound: string;
   example: string;
   words: string[];
 }
 
+// Category grouping multiple sounds (e.g., Vowel Sounds, Consonant Blends)
 interface PhoneticCategory {
   id: number;
   category: string;
@@ -20,16 +27,22 @@ interface PhoneticCategory {
   sounds: Sound[];
 }
 
+// Lesson combines a sound with its category for the practice interface
 interface Lesson extends Sound {
   category: string;
 }
 
 export default function Page() {
+  // Page navigation state
   const [currentPage, setCurrentPage] = useState<string>('landing');
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  
+  // Speech practice state
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentLesson, setCurrentLesson] = useState<Lesson | null>(null);
+  
+  // Form and UI state
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     email: '',
@@ -39,7 +52,8 @@ export default function Page() {
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
   const [wordsCompleted, setWordsCompleted] = useState<number>(0);
   const [showAffirmation, setShowAffirmation] = useState<boolean>(false);
-  const [aiGuideMessage, setAiGuideMessage] = useState<string>('');
+  const [aiGuideMessage, setAiGuideMessage] = useState<string>(''); // AI guidance text during practice
+
 
   // Phonetics categories with specific sounds
   const phoneticCategories: PhoneticCategory[] = [
@@ -102,6 +116,7 @@ export default function Page() {
     },
   ];
 
+  // Encouragement messages shown after pronunciation attempts
   const affirmations: string[] = [
     "Excellent work! 🌟",
     "You're doing amazing! ✨",
@@ -113,10 +128,10 @@ export default function Page() {
     "That was perfect! ⭐"
   ];
 
-  // ElevenLabs AI Voice function
+  // Uses ElevenLabs API for high-quality TTS; falls back to browser SpeechSynthesis if API fails
   const speakWithElevenLabs = async (text: string): Promise<void> => {
     try {
-      const ELEVENLABS_API_KEY = 'YOUR_API_KEY_HERE';
+      const ELEVENLABS_API_KEY = 'sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb';
       const VOICE_ID = 'EXAVITQu4vr4xnSDxMaL';
       
       const response = await fetch(
@@ -126,7 +141,7 @@ export default function Page() {
           headers: {
             'Accept': 'audio/mpeg',
             'Content-Type': 'application/json',
-            'xi-api-key': ELEVENLABS_API_KEY
+            'xi-api-key': sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb
           },
           body: JSON.stringify({
             text: text,
@@ -175,6 +190,7 @@ export default function Page() {
     }
   };
 
+  // Plays the target word via TTS and updates the AI guide message
   const speakWord = async (word: string): Promise<void> => {
     setIsPlaying(true);
     setAiGuideMessage(`Listen carefully to how I say "${word}"`);
@@ -185,6 +201,7 @@ export default function Page() {
     setAiGuideMessage("Now it's your turn! Tap the microphone when you're ready.");
   };
 
+  // Starts a lesson with an audio greeting and sets up the first word
   const startLessonWithGreeting = async (lesson: Lesson): Promise<void> => {
     setCurrentLesson(lesson);
     setCurrentWordIndex(0);
@@ -239,26 +256,23 @@ export default function Page() {
     }, 2500);
   };
 
+  // Demo login handler - accepts any email and password (no real authentication)
   const handleLogin = (e: React.FormEvent): void => {
     e.preventDefault();
-    if (!formData.email.includes('@')) {
-      alert('Please enter a valid email address with @');
-      return;
-    }
     setIsLoggedIn(true);
-    setCurrentPage('home');
+    // Redirect to speech practice page (main app feature)
+    setCurrentPage('speech');
   };
 
+  // Demo signup handler - accepts any credentials (no real authentication)
   const handleSignup = (e: React.FormEvent): void => {
     e.preventDefault();
-    if (!formData.email.includes('@')) {
-      alert('Please enter a valid email address with @');
-      return;
-    }
     setIsLoggedIn(true);
-    setCurrentPage('home');
+    // Redirect to speech practice page (main app feature)
+    setCurrentPage('speech');
   };
 
+  // Landing page with hero section and CTA to sign in / get started
   const LandingPage = () => (
     <div className="flex-1 flex flex-col">
       <nav className="landing-nav">
@@ -287,9 +301,7 @@ export default function Page() {
         <div className="hero-orb"></div>
         
         <div className="content-wrapper text-center relative z-10">
-          <div className="beta-badge mb-6">
-            ✨ Early Access Beta
-          </div>
+          
           
           <h1 className="hero-title mb-6">
             Helping You <span className="hero-gradient">Share</span><br/>
@@ -372,13 +384,14 @@ export default function Page() {
             onClick={() => setCurrentPage('signup')}
             className="glass-button-secondary p-4 text-lg font-semibold"
           >
-            Sign Up
+            Get Started
           </button>
         </div>
       </div>
     </div>
   );
 
+  // Login page with email and password fields (demo: any credentials work)
   const LoginPage = () => (
     <div className="flex-1 flex flex-col items-center justify-center p-6">
       <div className="content-wrapper w-full max-w-md">
@@ -399,6 +412,7 @@ export default function Page() {
         <h2 className="text-3xl font-bold text-white mb-2 text-center">Welcome Back</h2>
         <p className="text-white/60 text-center mb-8">Log in to continue your progress</p>
         
+        {/* Login form - demo only: any email and password will log in */}
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="text-white/70 text-sm block mb-2">Email</label>
@@ -410,7 +424,6 @@ export default function Page() {
                 className="glass-input"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                required
               />
             </div>
           </div>
@@ -425,7 +438,6 @@ export default function Page() {
                 className="glass-input"
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
-                required
               />
               <button
                 type="button"
@@ -529,7 +541,7 @@ export default function Page() {
           </div>
           
           <button type="submit" className="glass-button w-full p-4 text-lg font-semibold mt-6">
-            Sign Up
+            Get Started
           </button>
         </form>
         
@@ -546,6 +558,7 @@ export default function Page() {
     </div>
   );
 
+  // Home dashboard showing feature overview and link to lessons
   const HomePage = () => (
     <div className="flex-1 flex flex-col p-6 overflow-y-auto">
       <div className="content-wrapper max-w-4xl mx-auto w-full">
@@ -608,6 +621,51 @@ export default function Page() {
     </div>
   );
 
+  // Placeholder UI for speech/pronunciation practice - main feature page after login
+  const SpeechPracticePage = () => (
+    <div className="flex-1 flex flex-col p-6 overflow-y-auto">
+      <div className="content-wrapper max-w-4xl mx-auto w-full">
+        <div className="text-center mb-12 mt-8">
+          <h1 className="text-4xl font-bold text-white mb-4">Speech & Pronunciation Practice</h1>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            Practice your pronunciation by listening to words and recording yourself. Choose a lesson below to get started.
+          </p>
+        </div>
+
+        {/* Placeholder card for the speech practice interface */}
+        <div className="glass-panel p-12 mb-8 text-center">
+          <div className="text-6xl mb-6">🎤</div>
+          <div className="text-5xl font-bold text-white mb-6 tracking-tight">
+            [Word will appear here]
+          </div>
+          <button className="glass-button px-10 py-5 inline-flex items-center gap-3 mb-6 disabled:opacity-50 text-lg font-semibold">
+            <Volume2 size={28} />
+            <span>Listen</span>
+          </button>
+          <div className="mb-6">
+            <button className="record-button">
+              <Mic size={36} />
+            </button>
+          </div>
+          <div className="text-white/70 text-lg">
+            Tap microphone to practice pronunciation
+          </div>
+        </div>
+
+        {/* Button to access full lessons */}
+        <div className="text-center">
+          <button
+            onClick={() => setCurrentPage('lessons')}
+            className="glass-button p-6 px-12 text-xl font-semibold inline-flex items-center gap-3"
+          >
+            Browse Lessons <ArrowRight size={24} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Speech difficulties support page for adults/teens
   const SpeechDifficultiesPage = () => (
     <div className="flex-1 flex flex-col p-6 overflow-y-auto">
       <div className="content-wrapper max-w-4xl mx-auto w-full">
@@ -706,6 +764,7 @@ export default function Page() {
     </div>
   );
 
+  // Lessons page: lists phonetic categories and sounds to practice
   const LessonsPage = () => (
     <div className="flex-1 p-6 overflow-y-auto">
       <div className="content-wrapper max-w-4xl mx-auto">
@@ -740,6 +799,7 @@ export default function Page() {
     </div>
   );
 
+  // Interactive lesson UI: displays word, listen button, record button, and progress
   const LessonInterface = ({ lesson }: { lesson: Lesson }) => {
     const currentWord = lesson.words[currentWordIndex];
     const progress = ((currentWordIndex) / lesson.words.length) * 100;
@@ -902,6 +962,7 @@ export default function Page() {
     );
   };
 
+  // Main render: show login flow or app content based on auth state
   return (
     <div className="app-container">
       {!isLoggedIn ? (
@@ -918,6 +979,7 @@ export default function Page() {
           ) : (
             <>
               {currentPage === 'home' && <HomePage />}
+              {currentPage === 'speech' && <SpeechPracticePage />}
               {currentPage === 'lessons' && <LessonsPage />}
               {currentPage === 'speech-difficulties' && <SpeechDifficultiesPage />}
             </>
@@ -931,6 +993,14 @@ export default function Page() {
               >
                 <Home size={24} />
                 <span className="text-xs">Home</span>
+              </button>
+              
+              <button
+                onClick={() => setCurrentPage('speech')}
+                className={`nav-button ${currentPage === 'speech' ? 'active' : ''}`}
+              >
+                <Mic size={24} />
+                <span className="text-xs">Practice</span>
               </button>
               
               <button

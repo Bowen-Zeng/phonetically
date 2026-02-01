@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/10099/OneDrive/Documents/phonetically/app/layout.tsx"],"sourcesContent":["/**\r\n * Root layout for Phonetically app\r\n * Applies global styles and wraps all pages\r\n */\r\nimport type { Metadata } from 'next';\r\nimport './globals.css';\r\n\r\nexport const metadata: Metadata = {\r\n  title: 'Phonetically',\r\n  description: 'Pronunciation practice, designed for accessibility.',\r\n};\r\n\r\nexport default function RootLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return (\r\n    <html lang=\"en\">\r\n      <body>{children}</body>\r\n    </html>\r\n  );\r\n}\r\n"],"names":[],"mappings":"AAAA;;;CAGC;;;;;;;;;AAIM,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,uRAAC;QAAK,MAAK;kBACT,cAAA,uRAAC;sBAAM;;;;;;;;;;;AAGb"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/10099/OneDrive/Documents/phonetically/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4JACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

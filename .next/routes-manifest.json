@@ -39,6 +39,78 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/dashboard/progress",
+      "regex": "^/api/dashboard/progress(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/dashboard/progress(?:/)?$"
+    },
+    {
+      "page": "/api/dashboard/recent",
+      "regex": "^/api/dashboard/recent(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/dashboard/recent(?:/)?$"
+    },
+    {
+      "page": "/api/dashboard/recommended",
+      "regex": "^/api/dashboard/recommended(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/dashboard/recommended(?:/)?$"
+    },
+    {
+      "page": "/api/dashboard/summary",
+      "regex": "^/api/dashboard/summary(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/dashboard/summary(?:/)?$"
+    },
+    {
+      "page": "/api/practice/score",
+      "regex": "^/api/practice/score(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/practice/score(?:/)?$"
+    },
+    {
+      "page": "/api/sessions/end",
+      "regex": "^/api/sessions/end(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/sessions/end(?:/)?$"
+    },
+    {
+      "page": "/api/sessions/start",
+      "regex": "^/api/sessions/start(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/sessions/start(?:/)?$"
+    },
+    {
+      "page": "/api/speak",
+      "regex": "^/api/speak(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/speak(?:/)?$"
+    },
+    {
+      "page": "/api/therapist",
+      "regex": "^/api/therapist(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/therapist(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/practice",
+      "regex": "^/practice(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/practice(?:/)?$"
     }
   ],
   "dataRoutes": [],

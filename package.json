@@ -11,6 +11,8 @@
   "dependencies": {
     "@types/styled-jsx": "^2.2.9",
     "lucide-react": "latest",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

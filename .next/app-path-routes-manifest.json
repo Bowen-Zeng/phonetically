@@ -1,5 +1,17 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
-  "/page": "/"
+  "/api/dashboard/progress/route": "/api/dashboard/progress",
+  "/api/dashboard/recent/route": "/api/dashboard/recent",
+  "/api/dashboard/recommended/route": "/api/dashboard/recommended",
+  "/api/dashboard/summary/route": "/api/dashboard/summary",
+  "/api/practice/score/route": "/api/practice/score",
+  "/api/sessions/end/route": "/api/sessions/end",
+  "/api/sessions/start/route": "/api/sessions/start",
+  "/api/speak/route": "/api/speak",
+  "/api/therapist/route": "/api/therapist",
+  "/dashboard/page": "/dashboard",
+  "/login/page": "/login",
+  "/page": "/",
+  "/practice/page": "/practice"
 }

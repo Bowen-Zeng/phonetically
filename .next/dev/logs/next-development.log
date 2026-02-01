@@ -1,1 +1,1495 @@
-[00:00:03.538] Server  LOG     ✓ Ready in 2.5s
+[00:00:01.571] Server  LOG     ✓ Ready in 1045ms
+[00:00:02.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.954] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[00:00:41.422] Browser ERROR   {}
+[00:02:29.111] Server  LOG     ✓ Compiled in 22ms
+[00:02:35.409] Server  LOG     ✓ Compiled in 51ms
+[00:02:41.631] Server  LOG     ✓ Compiled in 56ms
+[00:02:42.249] Server  LOG     ✓ Compiled in 131ms
+[00:02:53.130] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[00:03:11.926] Browser ERROR   {}
+[00:04:52.255] Server  LOG     ✓ Compiled in 23ms
+[00:05:04.116] Server  LOG     ✓ Compiled in 19ms
+[00:05:20.293] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.309] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.333] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.334] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.335] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.337] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.338] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.342] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.346] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.349] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.368] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.372] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.376] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.399] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.403] Server  LOG     ✓ Compiled in 256ms
+[00:05:20.607] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:20.760] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:20.774] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.778] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.788] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:20.788] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:20.791] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.851] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:20.899] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:21.125] Browser ERROR   uncaughtError: Error: ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:21.275] Browser ERROR   uncaughtError: Error: ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:21.316] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.316] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.316] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.316] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.443] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.463] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.463] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.463] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:21.463] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.445] Server  ERROR   ⨯ ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:23.615] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.652] Browser ERROR   uncaughtError: Error: ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:05:23.797] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.813] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.813] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.813] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:23.813] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:32.649] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:32.649] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:33.084] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:33.084] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:35.048] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:35.097] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:35.420] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:35.420] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:35.830] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:36.083] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:36.083] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:36.083] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:36.817] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:37.589] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:37.956] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:38.254] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:33.965] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:34.076] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:45.163] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:45.163] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:46.081] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:46.081] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:47.536] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:48.081] Browser ERROR   ./OneDrive/Documents/phonetically/app/layout.tsx:6:1
+Module not found: Can't resolve './globals.css'
+  4 |  */
+  5 | import type { Metadata } from 'next';
+> 6 | import './globals.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export const metadata: Metadata = {
+  9 |   title: 'Phonetically',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:56.519] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:56.749] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:14.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:37.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:40.233] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:45.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:47.018] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:35.235] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:35.340] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:11:36.580] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:40.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:40.577] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:12:46.106] Server  LOG     ✓ Compiled in 100.2s
+[00:14:41.338] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:46.547] Server  LOG     ✓ Compiled in 111.3s
+[00:14:47.001] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:47.101] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:48.314] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:16:48.020] Server  LOG     ✓ Compiled in 56.8s
+[00:21:15.936] Server  LOG     ✓ Compiled in 128.6s
+[00:26:46.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:49.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:49.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:51.565] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:51.661] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:55.039] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:55.099] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:56.863] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:56.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:37.680] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[00:32:38.012] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[00:33:08.910] Server  LOG     ✓ Compiled in 71.9s
+[00:34:33.411] Server  LOG     ✓ Compiled in 84.5s
+[00:36:31.577] Server  LOG     ✓ Compiled in 65.2s
+[00:38:20.942] Server  LOG     ✓ Compiled in 32.1s
+[00:38:28.995] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[00:38:29.246] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[00:38:35.629] Server  LOG     ✓ Compiled in 14.7s
+[00:39:07.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:38.505] Server  LOG     ✓ Compiled in 62.9s
+[00:41:06.946] Server  LOG     ✓ Compiled in 79s
+[00:41:24.113] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[00:44:34.503] Server  LOG     ✓ Compiled in 56.8s
+[00:44:43.832] Server  LOG     ✓ Compiled in 9.3s
+[00:45:40.261] Server  LOG     ✓ Compiled in 56.4s
+[00:45:48.123] Server  LOG     ✓ Compiled in 7.9s
+[00:49:16.220] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[00:54:01.319] Server  LOG     ✓ Compiled in 74.7s
+[00:55:23.594] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[00:57:43.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:51.596] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:01.908] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:00:55.026] Server  LOG     ✓ Compiled in 65.1s
+[01:01:21.284] Server  LOG     ✓ Compiled in 12.1s
+[01:01:56.387] Server  LOG     ✓ Compiled in 35s
+[01:02:32.737] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:02:33.462] Browser LOG     [SpeechRecognition] Listening started
+[01:02:36.957] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:02:36.957] Browser LOG     [SpeechRecognition] Recognition ended
+[01:02:42.564] Browser LOG     [SpeechRecognition] Listening started
+[01:02:46.956] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:02:46.956] Browser LOG     [SpeechRecognition] Recognition ended
+[01:03:05.118] Browser LOG     [SpeechRecognition] Listening started
+[01:03:08.261] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:03:08.261] Browser LOG     [SpeechRecognition] Recognition ended
+[01:04:26.583] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:04:27.827] Browser LOG     [SpeechRecognition] Listening started
+[01:04:28.573] Browser ERROR   [SpeechRecognition] Error: network 
+[01:04:28.573] Browser LOG     [SpeechRecognition] Recognition ended
+[01:04:38.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:43.286] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:04:43.940] Browser LOG     [SpeechRecognition] Listening started
+[01:04:49.579] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:04:49.580] Browser LOG     [SpeechRecognition] Recognition ended
+[01:04:51.146] Browser LOG     [SpeechRecognition] Listening started
+[01:04:55.135] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:04:55.135] Browser LOG     [SpeechRecognition] Recognition ended
+[01:05:38.509] Browser LOG     [SpeechRecognition] Listening started
+[01:05:39.119] Browser ERROR   [SpeechRecognition] Error: network 
+[01:05:39.120] Browser LOG     [SpeechRecognition] Recognition ended
+[01:05:39.993] Browser LOG     [SpeechRecognition] Listening started
+[01:05:40.522] Browser ERROR   [SpeechRecognition] Error: network 
+[01:05:40.522] Browser LOG     [SpeechRecognition] Recognition ended
+[01:05:43.091] Browser LOG     [SpeechRecognition] Listening started
+[01:05:48.860] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:05:48.860] Browser LOG     [SpeechRecognition] Recognition ended
+[01:05:50.805] Browser LOG     [SpeechRecognition] Listening started
+[01:05:53.111] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:05:53.111] Browser LOG     [SpeechRecognition] Recognition ended
+[01:05:54.180] Browser LOG     [SpeechRecognition] Listening started
+[01:06:01.000] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:06:01.001] Browser LOG     [SpeechRecognition] Recognition ended
+[01:09:43.751] Server  LOG     ✓ Compiled in 57.1s
+[01:10:23.516] Server  LOG     ✓ Compiled in 39.6s
+[01:10:28.333] Server  LOG     ✓ Compiled in 4.8s
+[01:11:39.180] Server  LOG     ✓ Compiled in 52.7s
+[01:13:15.731] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:13:20.491] Browser LOG     [SpeechRecognition] Listening started
+[01:13:26.208] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:13:52.452] Browser LOG     [SpeechRecognition] Listening started
+[01:13:58.029] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:14:03.190] Browser LOG     [SpeechRecognition] Listening started
+[01:14:08.791] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:15:57.805] Browser LOG     [SpeechRecognition] Listening started
+[01:16:04.860] Browser LOG     [SpeechRecognition] Listening started
+[01:16:07.746] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:16:09.102] Browser LOG     [SpeechRecognition] Listening started
+[01:16:35.466] Browser LOG     [SpeechRecognition] Listening started
+[01:29:37.359] Server  LOG     ✓ Compiled in 86s
+[01:29:48.833] Server  LOG     ✓ Compiled in 11.5s
+[01:30:43.348] Server  LOG     ✓ Compiled in 54.5s
+[01:31:10.688] Server  LOG     ✓ Compiled in 27.4s
+[01:40:30.372] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:40:45.235] Browser LOG     [SpeechRecognition] Listening started
+[01:40:53.472] Browser LOG     [SpeechRecognition] Listening started
+[01:43:32.025] Server  LOG     ✓ Compiled in 117.8s
+[01:44:25.005] Server  LOG     ✓ Compiled in 53s
+[01:44:49.206] Server  LOG     ✓ Compiled in 17.3s
+[01:44:55.250] Server  LOG     ✓ Compiled in 6s
+[01:46:32.118] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:46:42.288] Browser LOG     [SpeechRecognition] Listening started
+[01:46:50.397] Browser LOG     [SpeechRecognition] Listening started
+[01:46:56.682] Browser LOG     [SpeechRecognition] Listening started
+[01:47:02.464] Browser LOG     [SpeechRecognition] Listening started
+[01:47:08.546] Browser LOG     [SpeechRecognition] Listening started
+[01:49:32.694] Server  LOG     ✓ Compiled in 30.8s
+[01:53:49.469] Server  LOG     ✓ Compiled in 40.2s
+[01:54:04.309] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[01:54:05.998] Browser LOG     [SpeechRecognition] Listening started
+[01:55:11.613] Browser LOG     [SpeechRecognition] Listening started
+[01:55:26.265] Browser LOG     [SpeechRecognition] Listening started
+[01:55:29.186] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[01:55:32.141] Browser LOG     [SpeechRecognition] Listening started
+[01:57:47.992] Server  LOG     ✓ Compiled in 9.8s
+[01:58:32.115] Server  LOG     ✓ Compiled in 32.3s
+[02:00:37.486] Server  LOG     ✓ Compiled in 63.8s
+[02:01:31.700] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:02:27.067] Server  LOG     ✓ Compiled in 32.4s
+[02:02:55.562] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:03:44.646] Server  LOG     ✓ Compiled in 11.4s
+[02:04:39.461] Server  LOG     ✓ Compiled in 50s
+[02:13:18.619] Server  LOG     ✓ Compiled in 9.2s
+[02:13:34.983] Server  LOG     ✓ Compiled in 7.5s
+[02:13:39.183] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[02:13:39.508] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:13:41.669] Browser LOG     [SpeechRecognition] Listening started
+[02:13:47.434] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:13:48.549] Browser LOG     [SpeechRecognition] Listening started
+[02:13:51.113] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:13:51.806] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:13:54.070] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:14:00.154] Server  LOG     ✓ Compiled in 10.5s
+[02:14:36.751] Server  ERROR   ⨯ ReferenceError: attemptCount is not defined
+[02:14:37.220] Server  ERROR   ⨯ ReferenceError: attemptCount is not defined
+[02:14:37.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:14:37.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:14:38.131] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:14:59.442] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:14:59.445] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:14:59.446] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:14:59.511] Server  ERROR   ⨯ ReferenceError: attemptCount is not defined
+[02:14:59.583] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/OneDrive_Documents_phonetically_app_globals_ad229f6c.css
+[02:14:59.667] Server  ERROR   ⨯ ReferenceError: attemptCount is not defined
+[02:14:59.808] Server  LOG     ✓ Compiled in 382ms
+[02:14:59.918] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:14:59.964] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:00.087] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:15:09.342] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:09.711] Server  ERROR   ⨯ ReferenceError: attemptCount is not defined
+[02:15:09.856] Server  LOG     ✓ Compiled in 9.9s
+[02:15:09.965] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:10.159] Browser ERROR   uncaughtError: ReferenceError: attemptCount is not defined
+[02:24:14.450] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:24:16.060] Server  LOG     ✓ Compiled in 26.3s
+[02:24:16.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:26:40.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:26:40.635] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[02:26:44.940] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[02:26:45.259] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:28:43.945] Browser LOG     [SpeechRecognition] Listening started
+[02:28:49.512] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:29:17.118] Browser LOG     [SpeechRecognition] Listening started
+[02:29:22.739] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:30:12.595] Browser LOG     [SpeechRecognition] Listening started
+[02:30:18.163] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:30:19.701] Browser LOG     [SpeechRecognition] Listening started
+[02:30:25.649] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:30:30.133] Browser LOG     [SpeechRecognition] Listening started
+[02:30:35.978] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:30:37.997] Browser LOG     [SpeechRecognition] Listening started
+[02:30:43.871] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:31:11.105] Browser LOG     [SpeechRecognition] Listening started
+[02:31:17.301] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:31:29.332] Browser LOG     [SpeechRecognition] Listening started
+[02:31:33.450] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:31:34.564] Browser LOG     [SpeechRecognition] Listening started
+[02:31:38.029] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[02:31:38.035] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[02:31:39.930] Browser LOG     [SpeechRecognition] Listening started
+[02:31:46.081] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[02:31:47.774] Browser LOG     [SpeechRecognition] Listening started
+[02:31:53.446] Browser LOG     [SpeechRecognition] Listening started
+[02:32:04.701] Server  LOG     ○ Compiling /dashboard ...
+[02:34:28.920] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:33.247] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:33.249] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:33.249] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:33.789] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:33.900] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:34.033] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:34.166] Server  LOG     ✓ Compiled in 44.3s
+[02:34:34.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:34.367] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:34.579] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:37.974] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:37.974] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:37.978] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:38.438] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:38.982] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:39.018] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:39.113] Server  LOG     ✓ Compiled in 4.7s
+[02:34:39.206] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:39.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:39.379] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:39.879] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:40.329] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:40.460] Server  LOG     ✓ Compiled in 1210ms
+[02:34:40.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:40.709] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:41.547] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:41.966] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:42.112] Server  LOG     ✓ Compiled in 1496ms
+[02:34:42.211] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:42.361] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:43.127] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:43.567] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:44.017] Server  LOG     ✓ Compiled in 1741ms
+[02:34:44.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:45.150] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:48.328] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:48.733] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:48.799] Server  LOG     ✓ Compiled in 4s
+[02:34:48.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:49.120] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:49.285] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:49.359] Server  ERROR   ⨯ ReferenceError: PRACTICE_WORDS is not defined
+[02:34:49.463] Server  LOG     ✓ Compiled in 459ms
+[02:34:49.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:34:49.718] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:34:49.718] Browser ERROR   uncaughtError: ReferenceError: PRACTICE_WORDS is not defined
+[02:34:50.113] Server  LOG     ✓ Compiled in 485ms
+[02:34:50.275] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:35:13.531] Server  LOG     ✓ Compiled in 23.2s
+[02:35:36.076] Browser ERROR   uncaughtError: SyntaxError: Invalid or unexpected token
+[02:35:37.805] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:35:47.810] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:35:47.811] Browser ERROR   uncaughtError: ChunkLoadError: Failed to load chunk /_next/static/chunks/OneDrive_Documents_phonetically_app_layout_tsx_86d1c122._.js from module [project]/OneDrive/Documents/phonetically/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)
+[02:35:48.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:35:49.409] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:36:19.530] Server  LOG     ✓ Compiled in 36.6s
+[02:37:07.464] Server  LOG     ✓ Compiled in 17.4s
+[02:38:13.182] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:14.019] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:14.331] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./OneDrive/Documents/phonetically/app/practice/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:14.334] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./OneDrive/Documents/phonetically/app/practice/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:14.784] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:15.190] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:15.660] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:16.085] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:16.509] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:16.998] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:18.339] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:18.744] Server  ERROR   ⨯ Error: The default export is not a React Component in "/practice/page"
+[02:38:19.078] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/practice/page"
+[02:38:19.153] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/practice/page"
+[02:38:25.435] Server  LOG     ✓ Compiled in 44ms
+[02:39:38.741] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:39:39.025] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:39:59.168] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:40:03.103] Browser LOG     [SpeechRecognition] Listening started
+[02:40:07.799] Browser LOG     [SpeechRecognition] Listening started
+[02:40:15.677] Browser LOG     [SpeechRecognition] Listening started
+[02:40:29.595] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[02:40:30.628] Browser LOG     [SpeechRecognition] Listening started
+[02:41:49.894] Server  LOG     ✓ Compiled in 56.4s
+[02:44:48.733] Server  LOG     ✓ Compiled in 76s
+[02:45:21.841] Server  LOG     ✓ Compiled in 14s
+[02:56:42.241] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./OneDrive/Documents/phonetically/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:56:42.515] Server  LOG     ✓ Compiled in 10s
+[02:56:42.805] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./OneDrive/Documents/phonetically/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:56:44.134] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:56:48.629] Server  LOG     ✓ Compiled in 6.3s
+[02:59:18.711] Server  LOG     ✓ Compiled in 30.5s
+[02:59:45.053] Server  LOG     ✓ Compiled in 21.3s
+[03:00:33.422] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[03:00:33.593] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:00:37.361] Browser LOG     [SpeechRecognition] Listening started
+[03:00:41.886] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[03:00:44.209] Browser LOG     [SpeechRecognition] Listening started
+[03:00:51.828] Browser LOG     [SpeechRecognition] Listening started
+[03:00:55.882] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[03:01:01.512] Browser LOG     [SpeechRecognition] Listening started
+[03:02:23.605] Server  LOG     ✓ Compiled in 33.1s
+[03:03:01.502] Server  LOG     ✓ Compiled in 37.9s
+[03:03:33.865] Server  LOG     ✓ Compiled in 32.4s
+[03:08:50.265] Server  LOG     ✓ Compiled in 76.3s
+[03:09:06.584] Server  LOG     ✓ Compiled in 12.9s
+[03:09:13.582] Server  LOG     ✓ Compiled in 8s
+[03:12:20.483] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:18:33.780] Server  LOG     ✓ Compiled in 69s
+[03:18:48.189] Server  LOG     ✓ Compiled in 5.1s
+[03:20:39.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:20:46.752] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:21:28.056] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:23:51.752] Server  LOG     ✓ Compiled in 64.4s
+[03:24:01.392] Server  LOG     ✓ Compiled in 5.8s
+[03:25:51.919] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:25:58.753] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:26:04.382] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:26:08.502] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:27:30.555] Server  LOG     ✓ Compiled in 60.4s
+[03:29:14.699] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:29:26.351] Browser LOG     [SpeechRecognition] Listening started
+[03:29:32.629] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[03:29:35.830] Browser LOG     [SpeechRecognition] Listening started
+[03:29:38.938] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[03:29:42.076] Browser LOG     [SpeechRecognition] Listening started
+[03:29:50.918] Browser LOG     [SpeechRecognition] Listening started
+[03:29:55.688] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[03:31:29.044] Server  LOG     ✓ Compiled in 38.5s
+[03:35:40.154] Server  LOG     ✓ Compiled in 49.6s
+[03:36:31.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:36:38.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:36:41.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:36:42.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:42:54.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:42:57.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:46:44.126] Browser ERROR   uncaughtError: ReferenceError: isPhonaTyping is not defined
+[03:46:50.092] Server  LOG     ✓ Compiled in 22.7s
+[03:46:54.363] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:46:55.282] Server  ERROR   ⨯ ReferenceError: isPhonaTyping is not defined
+[03:46:55.286] Browser ERROR   uncaughtError: ReferenceError: isPhonaTyping is not defined
+[03:46:55.377] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:46:55.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:46:56.099] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+isPhonaTyping is not defined
+[03:47:22.867] Server  LOG     ✓ Compiled in 29.2s
+[03:48:28.092] Browser ERROR   uncaughtError: ReferenceError: isPhonaTyping is not defined
+[03:48:28.178] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:48:28.300] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:48:28.358] Browser ERROR   uncaughtError: ReferenceError: isPhonaTyping is not defined
+[03:48:29.716] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:48:29.718] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:48:32.299] Server  ERROR   Speak API error: SyntaxError: Unexpected end of JSON input
+[03:48:32.512] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:39.034] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:41.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:42.614] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:43.995] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:49:12.055] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:49:12.192] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[03:49:18.624] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:51:27.963] Server  LOG     ✓ Compiled in 69.5s
+[03:51:47.459] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:51:47.586] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[03:51:54.663] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:52:19.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:52:19.236] Browser WARN    Image with src "/phoneticallylogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[03:54:15.329] Server  LOG     ✓ Compiled in 44.7s
+[03:54:35.438] Server  LOG     ✓ Compiled in 17.7s
+[03:54:47.626] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[03:54:50.921] Browser LOG     [SpeechRecognition] Listening started
+[03:54:56.736] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[03:54:57.700] Browser LOG     [SpeechRecognition] Listening started
+[03:55:01.904] Browser LOG     [SpeechRecognition] Listening started
+[03:55:12.872] Browser LOG     [SpeechRecognition] Listening started
+[03:58:38.287] Server  LOG     ✓ Compiled in 44.1s
+[03:59:03.671] Server  LOG     ✓ Compiled in 15.4s
+[04:00:27.755] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:00:29.173] Browser LOG     [SpeechRecognition] Listening started
+[04:00:32.325] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:00:33.179] Browser LOG     [SpeechRecognition] Listening started
+[04:00:40.771] Browser LOG     [SpeechRecognition] Listening started
+[04:02:18.172] Server  LOG     ✓ Compiled in 30.4s
+[04:02:49.263] Server  LOG     ✓ Compiled in 20.4s
+[04:03:37.986] Browser LOG     [SpeechRecognition] Listening started
+[04:03:40.222] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[04:03:40.231] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[04:04:45.916] Server  LOG     ✓ Compiled in 42.9s
+[04:04:52.763] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:04:53.765] Browser LOG     [SpeechRecognition] Listening started
+[04:04:56.264] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:04:57.290] Browser LOG     [SpeechRecognition] Listening started
+[04:05:06.530] Browser LOG     [SpeechRecognition] Listening started
+[04:05:10.112] Browser LOG     [SpeechRecognition] Listening started
+[04:06:02.023] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:06:54.920] Server  LOG     ✓ Compiled in 61.6s
+[04:07:17.567] Server  LOG     ✓ Compiled in 22.6s
+[04:08:00.062] Browser LOG     [SpeechRecognition] Listening started
+[04:09:18.882] Server  LOG     ✓ Compiled in 30.4s
+[04:09:19.222] Server  LOG     ✓ Compiled in 388ms
+[04:09:58.154] Server  LOG     ✓ Compiled in 38.9s
+[04:10:19.406] Server  LOG     ✓ Compiled in 21.1s
+[04:12:50.373] Server  LOG     ✓ Compiled in 6.3s
+[04:13:55.846] Server  LOG     ✓ Compiled in 2.7s
+[04:14:21.130] Server  LOG     ✓ Compiled in 25.3s
+[04:18:34.208] Server  LOG     ✓ Compiled in 105.7s
+[04:18:39.991] Server  LOG     ✓ Compiled in 3.4s
+[04:18:51.736] Server  LOG     ✓ Compiled in 11.7s
+[04:19:43.713] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:19:49.224] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:19:59.231] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:20:01.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:20:08.049] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:20:13.961] Browser LOG     [SpeechRecognition] Listening started
+[04:20:19.730] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:20:20.861] Browser LOG     [SpeechRecognition] Listening started
+[04:20:27.507] Browser LOG     [SpeechRecognition] Listening started
+[04:20:31.402] Browser LOG     [SpeechRecognition] Listening started
+[04:22:55.362] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:22:59.277] Server  LOG     ✓ Compiled in 102.5s
+[04:23:26.213] Browser LOG     [SpeechRecognition] Listening started
+[04:23:32.077] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:23:53.753] Browser LOG     [SpeechRecognition] Listening started
+[04:23:59.066] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:24:00.672] Browser LOG     [SpeechRecognition] Listening started
+[04:24:05.554] Browser LOG     [SpeechRecognition] Listening started
+[04:24:10.132] Browser LOG     [SpeechRecognition] Listening started
+[04:24:12.476] Browser LOG     [SpeechRecognition] Listening started
+[04:25:20.046] Server  LOG     ✓ Compiled in 1442ms
+[04:25:28.791] Server  LOG     ✓ Compiled in 8.8s
+[04:25:36.772] Server  LOG     ✓ Compiled in 8s
+[04:25:41.574] Server  LOG     ✓ Compiled in 4.7s
+[04:25:48.063] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:25:55.181] Browser LOG     [SpeechRecognition] Listening started
+[04:26:00.166] Browser LOG     [SpeechRecognition] Listening started
+[04:26:50.294] Server  LOG     ✓ Compiled in 50.1s
+[04:27:44.077] Server  LOG     ✓ Compiled in 51.8s
+[04:27:55.333] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:27:56.232] Browser LOG     [SpeechRecognition] Listening started
+[04:28:02.222] Server  WARN    MONGODB_URI not set - Phona practice persistence disabled
+[04:28:02.239] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[04:28:05.510] Browser LOG     [SpeechRecognition] Listening started
+[04:28:11.294] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:28:13.145] Browser LOG     [SpeechRecognition] Listening started
+[04:28:18.884] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:28:22.793] Browser LOG     [SpeechRecognition] Listening started
+[04:29:17.626] Browser LOG     [SpeechRecognition] Listening started
+[04:29:23.504] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:29:29.784] Browser LOG     [SpeechRecognition] Listening started
+[04:29:35.532] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:29:37.406] Browser LOG     [SpeechRecognition] Listening started
+[04:30:36.542] Server  LOG     ✓ Compiled in 1297ms
+[04:31:32.198] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:32:09.042] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:33:13.409] Server  LOG     ✓ Compiled in 3s
+[04:33:28.805] Server  LOG     ✓ Compiled in 10.4s
+[04:34:38.573] Server  LOG     ✓ Compiled in 42.5s
+[04:34:53.518] Server  LOG     ✓ Compiled in 3.2s
+[04:34:57.161] Browser LOG     [SpeechRecognition] Listening started
+[04:35:06.021] Browser LOG     [SpeechRecognition] Listening started
+[04:35:10.206] Browser LOG     [SpeechRecognition] Listening started
+[04:35:39.756] Server  LOG     ✓ Compiled in 45.1s
+[04:37:18.100] Server  LOG     ✓ Compiled in 68.7s
+[04:37:18.743] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:38:40.391] Server  LOG     ✓ Compiled in 51.2s
+[04:39:24.507] Server  LOG     ✓ Compiled in 29.8s
+[04:40:30.736] Browser ERROR   uncaughtError: ReferenceError: handleContinueTutorial is not defined
+[04:41:09.194] Server  LOG     ✓ Compiled in 46.4s
+[04:43:14.491] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[04:43:22.569] Server  LOG     ✓ Compiled in 33.4s
+[04:43:23.589] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:43:54.985] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:43:56.182] Browser LOG     [SpeechRecognition] Listening started
+[04:44:03.415] Browser LOG     [SpeechRecognition] Listening started
+[04:44:09.184] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:44:09.671] Browser LOG     [SpeechRecognition] Listening started
+[04:44:10.525] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:44:11.126] Browser LOG     [SpeechRecognition] Listening started
+[04:44:22.623] Browser LOG     [SpeechRecognition] Listening started
+[04:44:24.702] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:44:27.243] Browser LOG     [SpeechRecognition] Listening started
+[04:44:44.613] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:44:44.905] Browser LOG     [SpeechRecognition] Listening started
+[04:44:52.763] Browser LOG     [SpeechRecognition] Listening started
+[04:44:56.838] Browser LOG     [SpeechRecognition] Listening started
+[04:45:05.123] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:46:56.585] Server  LOG     ✓ Compiled in 36.6s
+[04:47:17.493] Server  LOG     ✓ Compiled in 14.1s
+[04:49:16.112] Server  LOG     ✓ Compiled in 17.4s
+[04:49:16.452] Browser ERROR   ./OneDrive/Documents/phonetically/app/practice/page.tsx:654:16
+Parsing ecmascript source code failed
+  652 |                 </button>
+  653 |               </div>
+> 654 |               </>
+      |                ^^
+  655 |             )}
+  656 |
+  657 |             {step === 'complete' && (
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component Browser]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component SSR]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+[04:49:16.452] Browser ERROR   ./OneDrive/Documents/phonetically/app/practice/page.tsx:654:16
+Parsing ecmascript source code failed
+  652 |                 </button>
+  653 |               </div>
+> 654 |               </>
+      |                ^^
+  655 |             )}
+  656 |
+  657 |             {step === 'complete' && (
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component Browser]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component SSR]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+[04:49:45.967] Server  LOG     ✓ Compiled in 29.4s
+[04:49:48.013] Browser ERROR   ./OneDrive/Documents/phonetically/app/practice/page.tsx:654:16
+Parsing ecmascript source code failed
+  652 |                 </button>
+  653 |               </div>
+> 654 |               </>
+      |                ^^
+  655 |             )}
+  656 |
+  657 |             {step === 'complete' && (
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component Browser]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component SSR]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+[04:54:19.384] Browser LOG     [SpeechRecognition] Listening started
+[04:54:25.068] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:56:55.018] Server  LOG     ✓ Compiled in 64.3s
+[04:56:55.201] Browser ERROR   ./OneDrive/Documents/phonetically/app/practice/page.tsx:654:16
+Parsing ecmascript source code failed
+  652 |                   </button>
+  653 |                 </div>
+> 654 |               </>
+      |                ^^
+  655 |             )}
+  656 |
+  657 |             {step === 'complete' && (
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component Browser]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component SSR]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+[04:57:35.118] Browser ERROR   ./OneDrive/Documents/phonetically/app/practice/page.tsx:654:16
+Parsing ecmascript source code failed
+  652 |                   </button>
+  653 |                 </div>
+> 654 |               </>
+      |                ^^
+  655 |             )}
+  656 |
+  657 |             {step === 'complete' && (
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component Browser]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Client Component SSR]
+    ./OneDrive/Documents/phonetically/app/practice/page.tsx [Server Component]
+[04:57:38.836] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:57:44.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:57:46.075] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:57:47.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:57:50.818] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:58:28.795] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[04:58:30.077] Browser LOG     [SpeechRecognition] Listening started
+[04:58:35.893] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[04:58:40.261] Browser LOG     [SpeechRecognition] Listening started
+[04:58:47.395] Browser LOG     [SpeechRecognition] Listening started
+[04:58:54.207] Browser LOG     [SpeechRecognition] Listening started
+[04:59:01.142] Server  LOG     ✓ Compiled in 6.8s
+[04:59:05.412] Server  LOG     ✓ Compiled in 4.3s
+[04:59:21.319] Server  LOG     ✓ Compiled in 15.9s
+[04:59:48.473] Server  LOG     ✓ Compiled in 27.2s
+[05:00:08.048] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:00:09.219] Browser LOG     [SpeechRecognition] Listening started
+[05:00:13.689] Browser LOG     [SpeechRecognition] Listening started
+[05:00:19.447] Browser LOG     [SpeechRecognition] Listening started
+[05:00:26.812] Server  WARN    MONGODB_URI not set - therapist dashboard will not persist
+[05:00:33.413] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:00:34.469] Browser LOG     [SpeechRecognition] Listening started
+[05:00:39.119] Browser LOG     [SpeechRecognition] Listening started
+[05:00:47.272] Browser LOG     [SpeechRecognition] Listening started
+[05:00:51.284] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[05:00:53.702] Browser LOG     [SpeechRecognition] Listening started
+[05:00:59.378] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[05:01:00.738] Browser LOG     [SpeechRecognition] Listening started
+[05:01:24.109] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:01:25.069] Browser LOG     [SpeechRecognition] Listening started
+[05:01:31.265] Browser LOG     [SpeechRecognition] Listening started
+[05:01:35.312] Browser LOG     [SpeechRecognition] Listening started
+[05:01:40.999] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[05:01:42.215] Browser LOG     [SpeechRecognition] Listening started
+[05:02:52.645] Server  LOG     ✓ Compiled in 55.8s
+[05:03:24.189] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:04:26.119] Server  LOG     ✓ Compiled in 7.9s
+[05:04:30.733] Server  LOG     ✓ Compiled in 4.6s
+[05:04:56.975] Server  LOG     ✓ Compiled in 19.1s
+[05:05:50.223] Server  LOG     ✓ Compiled in 53.2s
+[05:06:01.460] Server  LOG     ✓ Compiled in 8.8s
+[05:06:26.339] Browser LOG     [SpeechRecognition] Listening started
+[05:06:26.415] Server  LOG     ✓ Compiled in 25s
+[05:06:32.604] Browser LOG     [SpeechRecognition] Listening started
+[05:06:37.196] Browser LOG     [SpeechRecognition] Listening started
+[05:06:46.222] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:06:47.028] Browser LOG     [SpeechRecognition] Listening started
+[05:06:54.837] Browser LOG     [SpeechRecognition] Listening started
+[05:07:01.987] Browser LOG     [SpeechRecognition] Listening started
+[05:07:07.724] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[05:07:19.994] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:07:21.092] Browser LOG     [SpeechRecognition] Listening started
+[05:10:36.753] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:10:39.049] Browser LOG     [SpeechRecognition] Listening started
+[05:10:46.995] Browser LOG     [SpeechRecognition] Listening started
+[05:10:52.704] Browser ERROR   [SpeechRecognition] Error: no-speech 
+[05:10:55.311] Browser LOG     [SpeechRecognition] Listening started
+[05:10:58.723] Browser LOG     [SpeechRecognition] Listening started
+[05:11:19.777] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:11:24.815] Server  ERROR   Session start error: Error: MONGODB_URI not configured
+[05:11:28.536] Server  ERROR   Session start error: Error: MONGODB_URI not configured

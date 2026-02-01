@@ -1,5 +1,17 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js"
+  "/api/dashboard/progress/route": "app/api/dashboard/progress/route.js",
+  "/api/dashboard/recent/route": "app/api/dashboard/recent/route.js",
+  "/api/dashboard/recommended/route": "app/api/dashboard/recommended/route.js",
+  "/api/dashboard/summary/route": "app/api/dashboard/summary/route.js",
+  "/api/practice/score/route": "app/api/practice/score/route.js",
+  "/api/sessions/end/route": "app/api/sessions/end/route.js",
+  "/api/sessions/start/route": "app/api/sessions/start/route.js",
+  "/api/speak/route": "app/api/speak/route.js",
+  "/api/therapist/route": "app/api/therapist/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/practice/page": "app/practice/page.js"
 }
