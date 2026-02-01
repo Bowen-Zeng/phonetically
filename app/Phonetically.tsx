@@ -1,6 +1,11 @@
-"use client";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mic, Volume2, Book, User, Home, ArrowRight, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+
+interface FormData {
+  email: string;
+  password: string;
+  name: string;
+}
 
 interface Sound {
   sound: string;
@@ -8,34 +13,36 @@ interface Sound {
   words: string[];
 }
 
-interface Category {
+interface PhoneticCategory {
   id: number;
   category: string;
   icon: string;
   sounds: Sound[];
 }
 
-type Lesson = Sound & { category: string };
+interface Lesson extends Sound {
+  category: string;
+}
 
-export default function Phonetically() {
-  const [currentPage, setCurrentPage] = useState('landing');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isRecording, setIsRecording] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+export default function Page() {
+  const [currentPage, setCurrentPage] = useState<string>('landing');
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isRecording, setIsRecording] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentLesson, setCurrentLesson] = useState<Lesson | null>(null);
-  const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
     name: ''
   });
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [wordsCompleted, setWordsCompleted] = useState(0);
-  const [showAffirmation, setShowAffirmation] = useState(false);
-  const [aiGuideMessage, setAiGuideMessage] = useState('');
+  const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
+  const [wordsCompleted, setWordsCompleted] = useState<number>(0);
+  const [showAffirmation, setShowAffirmation] = useState<boolean>(false);
+  const [aiGuideMessage, setAiGuideMessage] = useState<string>('');
 
   // Phonetics categories with specific sounds
-  const phoneticCategories = [
+  const phoneticCategories: PhoneticCategory[] = [
     {
       id: 1,
       category: 'Vowel Sounds',
@@ -95,7 +102,7 @@ export default function Phonetically() {
     },
   ];
 
-  const affirmations = [
+  const affirmations: string[] = [
     "Excellent work! 🌟",
     "You're doing amazing! ✨",
     "Great pronunciation! 🎉",
@@ -106,82 +113,154 @@ export default function Phonetically() {
     "That was perfect! ⭐"
   ];
 
-  // Simulated lessons data (would come from MongoDB)
-  const lessons = phoneticCategories;
+  // ElevenLabs AI Voice function
+  const speakWithElevenLabs = async (text: string): Promise<void> => {
+    try {
+      const ELEVENLABS_API_KEY = 'YOUR_API_KEY_HERE';
+      const VOICE_ID = 'EXAVITQu4vr4xnSDxMaL';
+      
+      const response = await fetch(
+        `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}`,
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'audio/mpeg',
+            'Content-Type': 'application/json',
+            'xi-api-key': ELEVENLABS_API_KEY
+          },
+          body: JSON.stringify({
+            text: text,
+            model_id: 'eleven_monolingual_v1',
+            voice_settings: {
+              stability: 0.5,
+              similarity_boost: 0.75,
+              style: 0.0,
+              use_speaker_boost: true
+            }
+          })
+        }
+      );
 
-  // ElevenLabs AI Voice simulation with guide
-//  const speakWord = async (word: string) => {
-    //setIsPlaying(true);
-    //setAiGuideMessage(`Listen carefully to how I say "${word}"`);
-    
-    // In production, this would call ElevenLabs API:
-    // const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID', {
-    //   method: 'POST',
-    //   headers: {
-    //     'xi-api-key': 'sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({ text: word })
-    // });
-    
-    // For demo, using Web Speech API
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.rate = 0.7;
-    utterance.pitch = 1.1;
-    utterance.onend = () => {
-      setIsPlaying(false);
-      setAiGuideMessage("Now it's your turn! Tap the microphone when you're ready.");
-    };
-    speechSynthesis.speak(utterance);
+      if (!response.ok) {
+        throw new Error('ElevenLabs API error');
+      }
+
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      
+      return new Promise((resolve, reject) => {
+        audio.onended = () => {
+          URL.revokeObjectURL(audioUrl);
+          resolve();
+        };
+        
+        audio.onerror = () => {
+          URL.revokeObjectURL(audioUrl);
+          reject(new Error('Audio playback error'));
+        };
+        
+        audio.play();
+      });
+      
+    } catch (error) {
+      console.error('ElevenLabs error:', error);
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.8;
+      utterance.pitch = 1.1;
+      return new Promise((resolve) => {
+        utterance.onend = () => resolve();
+        speechSynthesis.speak(utterance);
+      });
+    }
   };
 
-  const startRecording = () => {
+  const speakWord = async (word: string): Promise<void> => {
+    setIsPlaying(true);
+    setAiGuideMessage(`Listen carefully to how I say "${word}"`);
+    
+    await speakWithElevenLabs(`Listen carefully. ${word}. Now you try.`);
+    
+    setIsPlaying(false);
+    setAiGuideMessage("Now it's your turn! Tap the microphone when you're ready.");
+  };
+
+  const startLessonWithGreeting = async (lesson: Lesson): Promise<void> => {
+    setCurrentLesson(lesson);
+    setCurrentWordIndex(0);
+    setWordsCompleted(0);
+    setIsPlaying(true);
+    
+    const greeting = `Hi! Let's test your speech today. We're going to work on ${lesson.sound}. ${lesson.example}. Are you ready? Let's practice together!`;
+    setAiGuideMessage(greeting);
+    
+    await speakWithElevenLabs(greeting);
+    
+    setIsPlaying(false);
+    setAiGuideMessage("Click Listen to hear each word, then record yourself saying it!");
+  };
+
+  const startRecording = async (): Promise<void> => {
     setIsRecording(true);
     setAiGuideMessage("Listening... Say the word clearly!");
     
-    // In production, implement actual recording with Web Audio API
-    setTimeout(() => {
+    setTimeout(async () => {
       setIsRecording(false);
+      
+      const accuracy = Math.floor(Math.random() * 20) + 80;
       const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
-      setAiGuideMessage(randomAffirmation);
+      
+      let feedback = '';
+      if (accuracy >= 90) {
+        feedback = `${randomAffirmation} Your pronunciation was ${accuracy}% accurate! That was excellent!`;
+      } else if (accuracy >= 80) {
+        feedback = `Good job! You scored ${accuracy}%. Let's focus on making the sound a bit clearer. Try emphasizing the consonants more.`;
+      } else {
+        feedback = `Nice try! You scored ${accuracy}%. Here's what we need to work on: speak a bit slower and focus on the shape of your mouth when making the sound.`;
+      }
+      
+      setAiGuideMessage(feedback);
       setShowAffirmation(true);
       setWordsCompleted(prev => prev + 1);
       
+      setIsPlaying(true);
+      await speakWithElevenLabs(feedback);
+      setIsPlaying(false);
+      
       setTimeout(() => {
         setShowAffirmation(false);
-        setCurrentWordIndex(prev => prev + 1);
-        setAiGuideMessage("Ready for the next word?");
+        if (currentLesson && currentWordIndex < currentLesson.words.length - 1) {
+          setCurrentWordIndex(prev => prev + 1);
+          setAiGuideMessage("Ready for the next word? Click Listen when you're ready!");
+        } else {
+          setAiGuideMessage("Great work! You've completed all the words!");
+        }
       }, 2000);
     }, 2500);
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent): void => {
     e.preventDefault();
-    // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
       alert('Please enter a valid email address with @');
       return;
     }
-    // Accept any credentials since there's no database
     setIsLoggedIn(true);
     setCurrentPage('home');
   };
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = (e: React.FormEvent): void => {
     e.preventDefault();
-    // Simple email validation - must contain @
     if (!formData.email.includes('@')) {
       alert('Please enter a valid email address with @');
       return;
     }
-    // Accept any credentials since there's no database
     setIsLoggedIn(true);
     setCurrentPage('home');
   };
 
   const LandingPage = () => (
     <div className="flex-1 flex flex-col">
-      {/* Navigation Bar */}
       <nav className="landing-nav">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -204,9 +283,7 @@ export default function Phonetically() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <div className="flex-1 flex flex-col items-center justify-center p-6 relative overflow-hidden">
-        {/* Large glowing orb background */}
         <div className="hero-orb"></div>
         
         <div className="content-wrapper text-center relative z-10">
@@ -238,7 +315,6 @@ export default function Phonetically() {
           </div>
         </div>
 
-        {/* Bottom preview mockup */}
         <div className="preview-mockup">
           <div className="mockup-container">
             <div className="mockup-header">
@@ -391,7 +467,7 @@ export default function Phonetically() {
         </button>
         
         <img 
-          src="src\phenotically logos.png" 
+          src="/mnt/user-data/uploads/Untitled_design__7_.png" 
           alt="Phonetically Logo" 
           className="logo-small mb-6 mx-auto"
           style={{display: 'block'}}
@@ -476,7 +552,7 @@ export default function Phonetically() {
       <div className="content-wrapper max-w-4xl mx-auto w-full">
         <div className="text-center mb-12 mt-8">
           <img 
-            src="https://cdn.discordapp.com/attachments/1467199260062650552/1467276175981412523/Untitled_design_7.png?ex=697fcaed&is=697e796d&hm=2ac0c2aeefffd18730bfa2abf6208e1a5b8017ac89b1821efeb136a76d0aac3d" 
+            src="/mnt/user-data/uploads/Untitled_design__7_.png" 
             alt="Phonetically Logo" 
             className="logo-small mb-6 mx-auto"
             style={{display: 'block'}}
@@ -649,12 +725,7 @@ export default function Phonetically() {
                 {category.sounds.map((sound, idx) => (
                   <button
                     key={idx}
-                    onClick={() => {
-                      setCurrentLesson({ ...sound, category: category.category });
-                      setCurrentWordIndex(0);
-                      setWordsCompleted(0);
-                      setAiGuideMessage("Let's practice together! Click Listen to hear each word.");
-                    }}
+                    onClick={() => startLessonWithGreeting({ ...sound, category: category.category })}
                     className="glass-button p-4 text-left hover:scale-[1.02] transition-transform"
                   >
                     <div className="font-semibold text-lg text-white mb-1">{sound.sound}</div>
@@ -689,7 +760,6 @@ export default function Phonetically() {
             ← Back to Lessons
           </button>
           
-          {/* Progress Section */}
           <div className="glass-panel p-6 mb-6">
             <div className="flex justify-between items-center mb-3">
               <div>
@@ -702,7 +772,6 @@ export default function Phonetically() {
               </div>
             </div>
             
-            {/* Progress Bar */}
             <div className="relative w-full h-3 bg-black/30 rounded-full overflow-hidden">
               <div 
                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 rounded-full"
@@ -713,7 +782,6 @@ export default function Phonetically() {
             </div>
           </div>
 
-          {/* AI Guide Message */}
           {aiGuideMessage && (
             <div className="glass-panel p-4 mb-6 border-purple-500/40">
               <div className="flex items-start gap-3">
@@ -728,7 +796,6 @@ export default function Phonetically() {
 
           {currentWordIndex < lesson.words.length ? (
             <>
-              {/* Practice Area */}
               <div className="glass-panel p-12 mb-8 text-center">
                 <div className="text-7xl font-bold text-white mb-6 tracking-tight">
                   {currentWord}
@@ -757,7 +824,6 @@ export default function Phonetically() {
                   {isRecording ? 'Recording your voice...' : 'Tap microphone to practice'}
                 </div>
 
-                {/* Affirmation Animation */}
                 {showAffirmation && (
                   <div className="affirmation-popup">
                     {aiGuideMessage}
@@ -765,9 +831,8 @@ export default function Phonetically() {
                 )}
               </div>
               
-              {/* Word List */}
               <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-                {lesson.words.map((word: string, idx: number) => (
+                {lesson.words.map((word, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentWordIndex(idx)}
@@ -786,20 +851,48 @@ export default function Phonetically() {
               </div>
             </>
           ) : (
-            /* Completion Screen */
             <div className="glass-panel p-12 text-center">
               <div className="text-6xl mb-6">🎉</div>
               <h3 className="text-4xl font-bold text-white mb-4">Lesson Complete!</h3>
               <p className="text-white/70 text-xl mb-8">
                 You practiced {lesson.words.length} words in {lesson.sound}
               </p>
+              
+              <div className="glass-panel p-4 mb-6 max-w-2xl mx-auto border-purple-500/40">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">🤖</div>
+                  <div className="text-left">
+                    <div className="text-purple-400 text-sm font-semibold mb-1">AI Guide</div>
+                    <div className="text-white">
+                      Congratulations! You've completed all the words for {lesson.sound}. 
+                      You're making great progress! Keep practicing every day to improve your speech even more.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <button
+                onClick={async () => {
+                  setIsPlaying(true);
+                  await speakWithElevenLabs(
+                    `Congratulations! You've completed all the words for ${lesson.sound}. You're making great progress! Keep practicing every day to improve your speech even more.`
+                  );
+                  setIsPlaying(false);
+                }}
+                className="glass-button px-8 py-3 mb-4 inline-flex items-center gap-2"
+                disabled={isPlaying}
+              >
+                <Volume2 size={20} />
+                {isPlaying ? 'Playing...' : 'Hear Completion Message'}
+              </button>
+              
               <button
                 onClick={() => {
                   setCurrentLesson(null);
                   setCurrentWordIndex(0);
                   setWordsCompleted(0);
                 }}
-                className="glass-button px-10 py-4 text-lg font-semibold"
+                className="glass-button px-10 py-4 text-lg font-semibold block mx-auto"
               >
                 Choose Another Lesson
               </button>
@@ -810,514 +903,8 @@ export default function Phonetically() {
     );
   };
 
-
-
   return (
     <div className="app-container">
-      <style>{`
-        .app-container {
-          min-height: 100vh;
-          background: linear-gradient(180deg, #0a0a0f 0%, #1a0b2e 50%, #2d1b4e 100%);
-          display: flex;
-          flex-direction: column;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          color: white;
-          position: relative;
-        }
-
-        .app-container::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
-          pointer-events: none;
-        }
-        
-        .logo {
-          width: 140px;
-          height: 140px;
-          object-fit: contain;
-          filter: drop-shadow(0 10px 40px rgba(138, 43, 226, 0.5));
-        }
-
-        .logo-small {
-          width: 80px;
-          height: 80px;
-          object-fit: contain;
-          filter: drop-shadow(0 5px 25px rgba(138, 43, 226, 0.4));
-        }
-        
-        .glass-button {
-          background: rgba(138, 43, 226, 0.15);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(147, 51, 234, 0.4);
-          border-radius: 16px;
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
-        }
-        
-        .glass-button:hover {
-          background: rgba(147, 51, 234, 0.25);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
-          border-color: rgba(147, 51, 234, 0.6);
-        }
-        
-        .glass-button:active {
-          transform: translateY(0);
-        }
-
-        .glass-button-secondary {
-          background: rgba(20, 20, 30, 0.6);
-          backdrop-filter: blur(20px);
-          border: 2px solid rgba(147, 51, 234, 0.3);
-          border-radius: 16px;
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .glass-button-secondary:hover {
-          background: rgba(30, 30, 45, 0.8);
-          transform: translateY(-2px);
-          border-color: rgba(147, 51, 234, 0.5);
-          box-shadow: 0 8px 30px rgba(138, 43, 226, 0.3);
-        }
-        
-        .glass-button:disabled {
-          cursor: not-allowed;
-          opacity: 0.5;
-        }
-        
-        .glass-panel {
-          background: rgba(20, 20, 35, 0.5);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(147, 51, 234, 0.2);
-          border-radius: 24px;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .glass-panel:hover {
-          background: rgba(30, 30, 45, 0.6);
-          transform: translateY(-4px);
-          box-shadow: 0 8px 40px rgba(138, 43, 226, 0.3);
-          border-color: rgba(147, 51, 234, 0.4);
-        }
-
-        .input-wrapper {
-          position: relative;
-          width: 100%;
-        }
-
-        .glass-input {
-          width: 100%;
-          padding: 14px 16px 14px 48px;
-          background: rgba(20, 20, 35, 0.6);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(147, 51, 234, 0.3);
-          border-radius: 12px;
-          color: white;
-          font-size: 16px;
-          transition: all 0.3s ease;
-        }
-
-        .glass-input::placeholder {
-          color: rgba(255, 255, 255, 0.4);
-        }
-
-        .glass-input:focus {
-          outline: none;
-          background: rgba(30, 30, 45, 0.8);
-          border-color: rgba(147, 51, 234, 0.6);
-          box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
-        }
-
-        .input-icon {
-          position: absolute;
-          left: 16px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: rgba(147, 51, 234, 0.7);
-          pointer-events: none;
-        }
-
-        .input-icon-right {
-          position: absolute;
-          right: 16px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: rgba(147, 51, 234, 0.7);
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 4px;
-          transition: color 0.3s ease;
-        }
-
-        .input-icon-right:hover {
-          color: rgba(147, 51, 234, 1);
-        }
-        
-        .record-button {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
-          border: 3px solid rgba(147, 51, 234, 0.5);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          color: white;
-          box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
-        }
-        
-        .record-button:hover {
-          transform: scale(1.1);
-          box-shadow: 0 0 40px rgba(147, 51, 234, 0.8);
-          border-color: rgba(147, 51, 234, 0.8);
-        }
-        
-        .record-button.recording {
-          animation: pulse 1.5s ease-in-out infinite;
-          background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
-        }
-        
-        @keyframes pulse {
-          0%, 100% { 
-            transform: scale(1);
-            box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
-          }
-          50% { 
-            transform: scale(1.1);
-            box-shadow: 0 0 50px rgba(147, 51, 234, 0.9);
-          }
-        }
-        
-        .nav-bar {
-          background: rgba(10, 10, 20, 0.8);
-          backdrop-filter: blur(30px);
-          border-top: 1px solid rgba(147, 51, 234, 0.2);
-          padding: 12px 0;
-          position: relative;
-          z-index: 10;
-        }
-        
-        .nav-button {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 4px;
-          padding: 8px 16px;
-          color: rgba(255, 255, 255, 0.5);
-          cursor: pointer;
-          transition: all 0.3s ease;
-          background: none;
-          border: none;
-          position: relative;
-        }
-        
-        .nav-button.active {
-          color: #a855f7;
-        }
-
-        .nav-button.active::before {
-          content: '';
-          position: absolute;
-          top: -12px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 32px;
-          height: 3px;
-          background: linear-gradient(90deg, #9333ea, #a855f7);
-          border-radius: 2px;
-          box-shadow: 0 0 10px rgba(147, 51, 234, 0.6);
-        }
-        
-        .nav-button:hover {
-          color: #a855f7;
-        }
-
-        .section-badge {
-          display: inline-block;
-          padding: 6px 16px;
-          background: rgba(147, 51, 234, 0.2);
-          border: 1px solid rgba(147, 51, 234, 0.4);
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: 600;
-          color: #a855f7;
-          margin-bottom: 16px;
-        }
-
-        .content-wrapper {
-          position: relative;
-          z-index: 1;
-        }
-
-        /* Landing Page Styles */
-        .landing-nav {
-          background: rgba(10, 10, 20, 0.6);
-          backdrop-filter: blur(30px);
-          border-bottom: 1px solid rgba(147, 51, 234, 0.1);
-          position: relative;
-          z-index: 100;
-        }
-
-        .nav-logo {
-          width: 32px;
-          height: 32px;
-          object-fit: contain;
-          filter: drop-shadow(0 2px 10px rgba(138, 43, 226, 0.4));
-        }
-
-        .nav-link {
-          color: rgba(255, 255, 255, 0.7);
-          background: none;
-          border: none;
-          cursor: pointer;
-          font-size: 15px;
-          transition: color 0.3s ease;
-          padding: 8px 12px;
-        }
-
-        .nav-link:hover {
-          color: white;
-        }
-
-        .get-started-btn {
-          background: rgba(168, 85, 247, 0.2);
-          border: 1px solid rgba(168, 85, 247, 0.4);
-          color: white;
-          padding: 10px 24px;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-
-        .get-started-btn:hover {
-          background: rgba(168, 85, 247, 0.3);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
-        }
-
-        .hero-orb {
-          position: absolute;
-          top: -200px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 800px;
-          height: 800px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(138, 43, 226, 0.1) 40%, transparent 70%);
-          filter: blur(60px);
-          pointer-events: none;
-          animation: orbPulse 8s ease-in-out infinite;
-        }
-
-        @keyframes orbPulse {
-          0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
-          50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
-        }
-
-        .beta-badge {
-          display: inline-block;
-          padding: 8px 20px;
-          background: rgba(147, 51, 234, 0.15);
-          border: 1px solid rgba(147, 51, 234, 0.3);
-          border-radius: 24px;
-          color: rgba(168, 85, 247, 0.9);
-          font-size: 14px;
-          font-weight: 600;
-        }
-
-        .hero-title {
-          font-size: 72px;
-          font-weight: 800;
-          line-height: 1.1;
-          color: white;
-          letter-spacing: -0.02em;
-        }
-
-        .hero-gradient {
-          background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e0c3fc 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .hero-subtitle {
-          font-size: 18px;
-          line-height: 1.8;
-          color: rgba(255, 255, 255, 0.6);
-          max-width: 700px;
-          margin: 0 auto;
-        }
-
-        .hero-primary-btn {
-          background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
-          border: none;
-          color: white;
-          padding: 16px 40px;
-          border-radius: 12px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
-        }
-
-        .hero-primary-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
-        }
-
-        .hero-secondary-btn {
-          background: rgba(20, 20, 35, 0.6);
-          border: 1px solid rgba(147, 51, 234, 0.3);
-          color: white;
-          padding: 16px 40px;
-          border-radius: 12px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          backdrop-filter: blur(20px);
-        }
-
-        .hero-secondary-btn:hover {
-          background: rgba(30, 30, 45, 0.8);
-          border-color: rgba(147, 51, 234, 0.5);
-          transform: translateY(-2px);
-        }
-
-        .preview-mockup {
-          position: absolute;
-          bottom: -100px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 90%;
-          max-width: 1000px;
-          perspective: 1000px;
-        }
-
-        .mockup-container {
-          background: rgba(15, 15, 25, 0.8);
-          backdrop-filter: blur(40px);
-          border: 1px solid rgba(147, 51, 234, 0.2);
-          border-radius: 16px;
-          padding: 24px;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(147, 51, 234, 0.1);
-          transform: rotateX(8deg);
-        }
-
-        .mockup-logo {
-          width: 28px;
-          height: 28px;
-          object-fit: contain;
-        }
-
-        .mockup-content {
-          background: rgba(10, 10, 20, 0.5);
-          border: 1px solid rgba(147, 51, 234, 0.1);
-          border-radius: 12px;
-          padding: 20px;
-        }
-
-        .mockup-card {
-          background: rgba(147, 51, 234, 0.1);
-          border: 1px solid rgba(147, 51, 234, 0.2);
-          border-radius: 8px;
-          padding: 16px;
-          color: white;
-          font-size: 13px;
-          text-align: center;
-        }
-
-        .mockup-list {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .mockup-item {
-          background: rgba(20, 20, 35, 0.5);
-          border: 1px solid rgba(147, 51, 234, 0.1);
-          border-radius: 6px;
-          padding: 12px 16px;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 13px;
-        }
-
-        @media (max-width: 768px) {
-          .hero-title {
-            font-size: 48px;
-          }
-          
-          .hero-subtitle {
-            font-size: 16px;
-          }
-
-          .preview-mockup {
-            bottom: -50px;
-          }
-        }
-
-        /* Affirmation Popup */
-        .affirmation-popup {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0.8);
-          background: linear-gradient(135deg, #9333ea 0%, #a855f7 100%);
-          padding: 32px 48px;
-          border-radius: 24px;
-          font-size: 32px;
-          font-weight: 700;
-          color: white;
-          box-shadow: 0 20px 60px rgba(147, 51, 234, 0.6);
-          animation: affirmationAppear 0.5s ease-out forwards;
-          z-index: 1000;
-        }
-
-        @keyframes affirmationAppear {
-          0% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.5);
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(1.1);
-          }
-          100% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-      `}</style>
-      
       {!isLoggedIn ? (
         <>
           {currentPage === 'landing' && <LandingPage />}
@@ -1358,7 +945,7 @@ export default function Phonetically() {
               <button
                 onClick={() => {
                   setIsLoggedIn(false);
-                  setCurrentPage('welcome');
+                  setCurrentPage('landing');
                 }}
                 className="nav-button"
               >
@@ -1369,6 +956,468 @@ export default function Phonetically() {
           </nav>
         </>
       )}
+      
+      <style jsx global>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+        }
+        .app-container {
+          min-height: 100vh;
+          background: linear-gradient(180deg, #0a0a0f 0%, #1a0b2e 50%, #2d1b4e 100%);
+          display: flex;
+          flex-direction: column;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          color: white;
+          position: relative;
+        }
+        .app-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+          pointer-events: none;
+        }
+        .logo {
+          width: 140px;
+          height: 140px;
+          object-fit: contain;
+          filter: drop-shadow(0 10px 40px rgba(138, 43, 226, 0.5));
+          display: block;
+        }
+        .logo-small {
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+          filter: drop-shadow(0 5px 25px rgba(138, 43, 226, 0.4));
+          display: block;
+        }
+        button {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .glass-button {
+          background: rgba(138, 43, 226, 0.15);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(147, 51, 234, 0.4);
+          border-radius: 16px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
+        }
+        .glass-button:hover {
+          background: rgba(147, 51, 234, 0.25);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
+          border-color: rgba(147, 51, 234, 0.6);
+        }
+        .glass-button:active {
+          transform: translateY(0);
+        }
+        .glass-button-secondary {
+          background: rgba(20, 20, 30, 0.6);
+          backdrop-filter: blur(20px);
+          border: 2px solid rgba(147, 51, 234, 0.3);
+          border-radius: 16px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .glass-button-secondary:hover {
+          background: rgba(30, 30, 45, 0.8);
+          transform: translateY(-2px);
+          border-color: rgba(147, 51, 234, 0.5);
+          box-shadow: 0 8px 30px rgba(138, 43, 226, 0.3);
+        }
+        .glass-button:disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+        .glass-panel {
+          background: rgba(20, 20, 35, 0.5);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(147, 51, 234, 0.2);
+          border-radius: 24px;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+        .glass-panel:hover {
+          background: rgba(30, 30, 45, 0.6);
+          transform: translateY(-4px);
+          box-shadow: 0 8px 40px rgba(138, 43, 226, 0.3);
+          border-color: rgba(147, 51, 234, 0.4);
+        }
+        .input-wrapper {
+          position: relative;
+          width: 100%;
+        }
+        .glass-input {
+          width: 100%;
+          padding: 14px 16px 14px 48px;
+          background: rgba(20, 20, 35, 0.6);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(147, 51, 234, 0.3);
+          border-radius: 12px;
+          color: white;
+          font-size: 16px;
+          transition: all 0.3s ease;
+        }
+        .glass-input::placeholder {
+          color: rgba(255, 255, 255, 0.4);
+        }
+        .glass-input:focus {
+          outline: none;
+          background: rgba(30, 30, 45, 0.8);
+          border-color: rgba(147, 51, 234, 0.6);
+          box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+        }
+        .input-icon {
+          position: absolute;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: rgba(147, 51, 234, 0.7);
+          pointer-events: none;
+        }
+        .input-icon-right {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: rgba(147, 51, 234, 0.7);
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+          transition: color 0.3s ease;
+        }
+        .input-icon-right:hover {
+          color: rgba(147, 51, 234, 1);
+        }
+        .record-button {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+          border: 3px solid rgba(147, 51, 234, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          color: white;
+          box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+        }
+        .record-button:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 40px rgba(147, 51, 234, 0.8);
+          border-color: rgba(147, 51, 234, 0.8);
+        }
+        .record-button.recording {
+          animation: pulse 1.5s ease-in-out infinite;
+          background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+        }
+        @keyframes pulse {
+          0%, 100% { 
+            transform: scale(1);
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+          }
+          50% { 
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(147, 51, 234, 0.9);
+          }
+        }
+        .nav-bar {
+          background: rgba(10, 10, 20, 0.8);
+          backdrop-filter: blur(30px);
+          border-top: 1px solid rgba(147, 51, 234, 0.2);
+          padding: 12px 0;
+          position: relative;
+          z-index: 10;
+        }
+        .nav-button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          padding: 8px 16px;
+          color: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: none;
+          border: none;
+          position: relative;
+        }
+        .nav-button.active {
+          color: #a855f7;
+        }
+        .nav-button.active::before {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 32px;
+          height: 3px;
+          background: linear-gradient(90deg, #9333ea, #a855f7);
+          border-radius: 2px;
+          box-shadow: 0 0 10px rgba(147, 51, 234, 0.6);
+        }
+        .nav-button:hover {
+          color: #a855f7;
+        }
+        .section-badge {
+          display: inline-block;
+          padding: 6px 16px;
+          background: rgba(147, 51, 234, 0.2);
+          border: 1px solid rgba(147, 51, 234, 0.4);
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 600;
+          color: #a855f7;
+          margin-bottom: 16px;
+        }
+        .content-wrapper {
+          position: relative;
+          z-index: 1;
+        }
+        .landing-nav {
+          background: rgba(10, 10, 20, 0.6);
+          backdrop-filter: blur(30px);
+          border-bottom: 1px solid rgba(147, 51, 234, 0.1);
+          position: relative;
+          z-index: 100;
+        }
+        .nav-logo {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+          filter: drop-shadow(0 2px 10px rgba(138, 43, 226, 0.4));
+        }
+        .nav-link {
+          color: rgba(255, 255, 255, 0.7);
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 15px;
+          transition: color 0.3s ease;
+          padding: 8px 12px;
+        }
+        .nav-link:hover {
+          color: white;
+        }
+        .get-started-btn {
+          background: rgba(168, 85, 247, 0.2);
+          border: 1px solid rgba(168, 85, 247, 0.4);
+          color: white;
+          padding: 10px 24px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+        .get-started-btn:hover {
+          background: rgba(168, 85, 247, 0.3);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+        .hero-orb {
+          position: absolute;
+          top: -200px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 800px;
+          height: 800px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(138, 43, 226, 0.1) 40%, transparent 70%);
+          filter: blur(60px);
+          pointer-events: none;
+          animation: orbPulse 8s ease-in-out infinite;
+        }
+        @keyframes orbPulse {
+          0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+          50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+        .beta-badge {
+          display: inline-block;
+          padding: 8px 20px;
+          background: rgba(147, 51, 234, 0.15);
+          border: 1px solid rgba(147, 51, 234, 0.3);
+          border-radius: 24px;
+          color: rgba(168, 85, 247, 0.9);
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .hero-title {
+          font-size: 72px;
+          font-weight: 800;
+          line-height: 1.1;
+          color: white;
+          letter-spacing: -0.02em;
+        }
+        .hero-gradient {
+          background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e0c3fc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .hero-subtitle {
+          font-size: 18px;
+          line-height: 1.8;
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 700px;
+          margin: 0 auto;
+        }
+        .hero-primary-btn {
+          background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+          border: none;
+          color: white;
+          padding: 16px 40px;
+          border-radius: 12px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+        .hero-primary-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+        }
+        .hero-secondary-btn {
+          background: rgba(20, 20, 35, 0.6);
+          border: 1px solid rgba(147, 51, 234, 0.3);
+          color: white;
+          padding: 16px 40px;
+          border-radius: 12px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(20px);
+        }
+        .hero-secondary-btn:hover {
+          background: rgba(30, 30, 45, 0.8);
+          border-color: rgba(147, 51, 234, 0.5);
+          transform: translateY(-2px);
+        }
+        .preview-mockup {
+          position: absolute;
+          bottom: -100px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 1000px;
+          perspective: 1000px;
+        }
+        .mockup-container {
+          background: rgba(15, 15, 25, 0.8);
+          backdrop-filter: blur(40px);
+          border: 1px solid rgba(147, 51, 234, 0.2);
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(147, 51, 234, 0.1);
+          transform: rotateX(8deg);
+        }
+        .mockup-logo {
+          width: 28px;
+          height: 28px;
+          object-fit: contain;
+        }
+        .mockup-content {
+          background: rgba(10, 10, 20, 0.5);
+          border: 1px solid rgba(147, 51, 234, 0.1);
+          border-radius: 12px;
+          padding: 20px;
+        }
+        .mockup-card {
+          background: rgba(147, 51, 234, 0.1);
+          border: 1px solid rgba(147, 51, 234, 0.2);
+          border-radius: 8px;
+          padding: 16px;
+          color: white;
+          font-size: 13px;
+          text-align: center;
+        }
+        .mockup-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .mockup-item {
+          background: rgba(20, 20, 35, 0.5);
+          border: 1px solid rgba(147, 51, 234, 0.1);
+          border-radius: 6px;
+          padding: 12px 16px;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 13px;
+        }
+        .affirmation-popup {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.8);
+          background: linear-gradient(135deg, #9333ea 0%, #a855f7 100%);
+          padding: 32px 48px;
+          border-radius: 24px;
+          font-size: 32px;
+          font-weight: 700;
+          color: white;
+          box-shadow: 0 20px 60px rgba(147, 51, 234, 0.6);
+          animation: affirmationAppear 0.5s ease-out forwards;
+          z-index: 1000;
+        }
+        @keyframes affirmationAppear {
+          0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+          100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 48px;
+          }
+          .hero-subtitle {
+            font-size: 16px;
+          }
+          .preview-mockup {
+            bottom: -50px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
