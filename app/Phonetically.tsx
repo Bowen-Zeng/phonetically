@@ -141,7 +141,7 @@ export default function Page() {
           headers: {
             'Accept': 'audio/mpeg',
             'Content-Type': 'application/json',
-            'xi-api-key': sk_09abdd9e55a0a656ecbfc1f0d29d77efcd3c3e63cea914eb
+            'xi-api-key': process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY || ""
           },
           body: JSON.stringify({
             text: text,
